@@ -1,0 +1,90 @@
+%==============================================================================
+% Sjabloon onderzoeksvoorstel bachelorproef
+%==============================================================================
+% Gebaseerd op LaTeX-sjabloon ‘Stylish Article’ (zie voorstel.cls)
+% Auteur: Jens Buysse, Bert Van Vreckem
+
+\documentclass[fleqn,10pt]{voorstel}
+\usepackage{siunitx}
+\usepackage{textcomp}
+%------------------------------------------------------------------------------
+% Metadata over het voorstel
+%------------------------------------------------------------------------------
+
+\JournalInfo{HoGent Bedrijf en Organisatie}
+\Archive{Bachelorproef 2018 - 2019} % Of: Onderzoekstechnieken
+
+%---------- Titel & auteur ----------------------------------------------------
+
+% TODO: geef werktitel van je eigen voorstel op
+\PaperTitle{Kan AR / VR gebruikt worden om het levensverhaal van een persoon te vertellen}
+\PaperType{Onderzoeksvoorstel Bachelorproef} % Type document
+
+% TODO: vul je eigen naam in als auteur, geef ook je emailadres mee!
+\Authors{Matthias De Fré\textsuperscript{1}} % Authors
+\CoPromotor{Joris De Lamper\textsuperscript{2} (In The Pocket)}
+\affiliation{\textbf{Contact:}
+  \textsuperscript{1} \href{mailto:matthias.defre.y7363@student.hogent.be}{matthias.defre.y7363@student.hogent.be@student.hogent.be};
+  \textsuperscript{2} \href{mailto:joris.delamper@inthepocket.com}{joris@inthepocket.be};
+}
+
+%---------- Abstract ----------------------------------------------------------
+
+\Abstract{%---------Hier schrijf je de samenvatting van je voorstel, als een doorlopende tekst van één paragraaf. Wat hier zeker in moet vermeld worden: \textbf{Context} (Waarom is dit werk belangrijk?); \textbf{Nood} (Waarom moet dit onderzocht worden?); \textbf{Taak} (Wat ga je (ongeveer) doen?); \textbf{Object} (Wat staat in dit document geschreven?); \textbf{Resultaat} (Wat verwacht je van je onderzoek?); \textbf{Conclusie} (Wat verwacht je van van de conclusies?); \textbf{Perspectief} (Wat zegt de toekomst voor dit werk?).-----
+
+In dit onderzoek wordt de mogelijkheid om een levensverhaal te vertellen aan de hand van AR/VR onderzocht. Deze zal een studie bevatten die de huidige technologieën om AR/VR applicaties te maken vergelijkt alsook een studie van soortgelijke use cases. Uit deze studie zal dan blijken welke technologie het meest gepast is om te gebruiken.
+Naast de studie zal er ook een prototype worden ontwikkeld voor het gekozen vakgebied. Momenteel is het vakgebied nog niet beslist maar deze zal één van de volgende zijn: psychologie, musea of kinderbegeleiders.
+
+}
+
+%---------- Onderzoeksdomein en sleutelwoorden --------------------------------
+% TODO: Sleutelwoorden:
+%
+% Het eerste sleutelwoord beschrijft het onderzoeksdomein. Je kan kiezen uit
+% deze lijst:
+%
+% - Mobiele applicatieontwikkeling
+% - Webapplicatieontwikkeling
+% - Applicatieontwikkeling (andere)
+% - Systeembeheer
+% - Netwerkbeheer
+% - Mainframe
+% - E-business
+% - Databanken en big data
+% - Machineleertechnieken en kunstmatige intelligentie
+% - Andere (specifieer)
+%
+% De andere sleutelwoorden zijn vrij te kiezen
+
+\Keywords{Onderzoeksdomein. Applicatieontwikkeling (andere) --- Augmented Reality --- Virtual Reality} % Keywords
+\newcommand{\keywordname}{Sleutelwoorden} % Defines the keywords heading name
+
+%---------- Titel, inhoud -----------------------------------------------------
+
+\begin{document}
+
+\flushbottom % Makes all text pages the same height
+\maketitle % Print the title and abstract box
+\tableofcontents % Pk rint the contents section
+\thispagestyle{empty} % Removes page numbering from the first page
+
+%------------------------------------------------------------------------------
+% Hoofdtekst
+%------------------------------------------------------------------------------
+
+% De hoofdtekst van het voorstel zit in een apart bestand, zodat het makkelijk
+% kan opgenomen worden in de bijlagen van de bachelorproef zelf.
+\input{voorstel-inhoud}
+
+%------------------------------------------------------------------------------
+% Referentielijst
+%------------------------------------------------------------------------------
+% TODO: de gerefereerde werken moeten in BibTeX-bestand ``voorstel.bib''
+% voorkomen. Gebruik JabRef om je bibliografie bij te houden en vergeet niet
+% om compatibiliteit met Biber/BibLaTeX aan te zetten (File > Switch to
+% BibLaTeX mode)
+
+\phantomsection
+\printbibliography[heading=bibintoc]
+
+\end{document}
