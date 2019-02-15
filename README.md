@@ -8,9 +8,9 @@ Deze bachelorproef bevat een studie die bestaande virtual en augmented reality t
 
 ### Inhoud
 
-- [Voorstel]: (https://github.com/MatthiasDeFre/bachelorproef-hogent-2019/tree/master/voorstel)
+- [Voorstel](https://github.com/MatthiasDeFre/bachelorproef-hogent-2019/tree/master/voorstel)
 
-- [Bachelorproef]: https://github.com/MatthiasDeFre/bachelorproef-hogent-2019/tree/master/bachproef
+- [Bachelorproef](https://github.com/MatthiasDeFre/bachelorproef-hogent-2019/tree/master/bachproef)
 
-- [Poster]: https://github.com/MatthiasDeFre/bachelorproef-hogent-2019/tree/master/poster
+- [Poster](https://github.com/MatthiasDeFre/bachelorproef-hogent-2019/tree/master/poster)
 
