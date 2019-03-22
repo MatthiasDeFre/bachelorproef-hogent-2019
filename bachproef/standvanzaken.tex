@@ -7,6 +7,8 @@
 
 % Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
 
+% TODO CONTENT Inleiding
+% TODO Verwijderen template text
 Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet er nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
 
 Je verwijst bij elke bewering die je doet, vakterm die je introduceert, enz. naar je bronnen. In \LaTeX{} kan dat met het commando \texttt{$\backslash${textcite\{\}}} of \texttt{$\backslash${autocite\{\}}}. Als argument van het commando geef je de ``sleutel'' van een ``record'' in een bibliografische databank in het Bib\TeX{}-formaat (een tekstbestand). Als je expliciet naar de auteur verwijst in de zin, gebruik je \texttt{$\backslash${}textcite\{\}}.
@@ -14,4 +16,33 @@ Soms wil je de auteur niet expliciet vernoemen, dan gebruik je \texttt{$\backsla
 
 \textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
 
-\lipsum[7-20]
+\section{Gelijkaardige use cases}
+% TODO CONTENT Gelijkaardige use cases
+
+\section{Teleprescence}
+Tijdens het gebruik van een VR applicatie is gebruiker aanwezig in 2 "werelden" tegelijk, teleprescence is dus dat de gebruiker zich meer aanwezig voelt in de virtuele wereld dan de fysieke wereld.
+Een grote fout die veel mensen maken is Virtual Reality koppelen aan hardware terwijl dit veel meer dan dit is \autocite{Steuer1992}.
+Perceptie van automatische en gecontrolleerde mentale processen
+
+Teleprescence komt niet alleen voor bij VR maar bij elke applicatie waarbij er gebruik wordt gemaakt van een communicatie medium. Dit communicatie medium is niet alleen digitaal ook fysieke zaken zoals kranten kan je het gevoel geven dat je er echt 'aanwezig' bent, mensen ervaren dit soms als rillingen wanneer ze bijvoorbeeld iets choquerend lezen. 
+Een groot verschil tussen VR en de andere mediums waarbij teleprescence in meespeelt is dat bij VR de gebruiker beide zender en ontvanger is. Hij zal acties versturen naar de virtuele wereld en beelden terug krijgen op basis van zijn acties.
+Aan de hand van deze definitie kunnen we dus afleiden dat zelfs 360 graden videos ook als VR tellen. Dit is omdat de beelden die de gebruiker te zien krijgt afhangen van de draaihoek hoe hij kijkt naar het scherm zelfs telefoneren kan men eigenlijk zien als VR \autocite{Steuer1992}.
+Omdat deze definitie van VR heel ruim is beperkt deze bachelorproef zich tot de volgende technologieën: Head Mounted VR, AR, 360 Degrees Videos en Mixed Reality.
+
+
+Om het niveau van teleprescence te verhogen bij de gebruiker moet er rekening worden gehouden met 2 variabelen: de levendigheid / echtheid en de interactiviteit van de applicatie \autocite{Steuer1992}.
+De belangrijkste factor die de echtheid van een applicatie verhoogt is de stimulatie van de zintuigen. Wanneer de gebruiker bijvoorbeeld echt de wind en het water voelt terwijl hij in een virtuele regen staat zal hij misschien meer geneigd zijn om de virtuele wereld als echt te gaan ervaren. De invloed van deze externe factoren kan afhangen van gebruiker tot gebruiker, sommige gebruikers staan hier meer voor open en zullen zich sneller ondergedompeld voelen in de ervaring dan anderen.
+Interactiviteit kan op verschillende manieren worden verhoogd, de manier waarop zal vaak afhangen van de gekozen technologie. Wanneer een HMD (Head Mounted Display) wordt gebruikt heeft de gebruiker beide handen vrij om acties te doen. Deze acties kunnen dan gebeuren door het herkennen van de lichaamsdelen of door externe controllers.
+Met het herkennen van de lichaamsdelen wordt er bedoeld dat de software effectief het lichaamsdeel zelf herkent en niet a.h.v. sensoren bevestigd op het lichaamsdeel. Deze techniek kan dus alleen worden gebruikt indien er gebruik wordt gemaakt van een camera bevestigd aan de voorkant van het apparaat (HoloLens, Smartphone) of een externe camera die lichaamsdelen herkent, bijvoorbeeld Microsoft Kinect \autocite{Ren2013}.
+Meestal zal een applicatie de vorm van een hand proberen te detecteren, a.h.v. deze vorm kan dan een 'gesture' worden herkent die dan gelinkt is aan een bepaalde actie \autocite{Piumsomboon2013}. 
+Voor het herkennen van gestures kan er gebruik worden gemaakt van computer vision \autocite{Ji2010}.
+
+\section{Computer Vision}
+
+% TODO CONTENT Computer Vision
+Vooral wanneer er gebruik wordt gemaakt van Augmented of Mixed Reality zal men te maken krijgen met computer vision. Computer vision is interdisciplinair wetenschappelijk gebied dat verschillende domeinen bevat in verband met herkenning a.h.v. beeldmateriaal. Waaronder: herkennen van objecten, afbeeldingen, bewegingen maar ook het aanpassen van beelden om zo ruis te verwijderen valt hieronder (INSERT CITE).
+
+Voor vele van deze algoritmen wordt er gebruik gemaakt van artificiële intelligentie, een vaak gebruikte techniek is het gebruik van een 'convolutional neural network' \autocite{Ji2010}. Afhankelijk van het algoritme zal dit neuraal netwerk opzoek gaan naar features die nuttig zijn. Bij gezichtsherkenning is het vinden van de neus, ogen en randen van het gezicht belangrijk terwijl een automatische drone eerder wilt weten waar de obstakels zich bevinden. Met de gevonden features kan de applicatie dan het gezicht blijven volgen en een filter hierop toepassen of kan er een 3d object worden gemaakt (bijvoorbeeld een obstakel) in het geval van de drone. 
+
+Het gebruik van computer vision wordt later verder besproken in (INSERT HOOFDSTUK) en (INSERT HOOFDSTUK). % TODO (Mixed Reality => Spatial Mapping ²²² Augmented Reality => Image detection / ground detection)
+% \lipsum[7-20]
