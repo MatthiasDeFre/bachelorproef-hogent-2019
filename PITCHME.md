@@ -78,19 +78,19 @@ Extra Info bv. over sensoren.
 
 +++?color=black
 
-@snap[west span-20]
-# 3 Variabelen
+@snap[west span-45]
+# 3 Vars
 @snapend
 
-@snap[north-east span-30 fragment]
+@snap[north-east span-60 fragment]
 @box[bg-purple text-white box-narrow-padding](Realisme.#Hoe kan de illusie van realisme worden bevorderd?.)
 @snapend
 
-@snap[east span-30 fragment]
+@snap[east span-60 fragment]
 @box[bg-orange text-white box-narrow-padding](Interactviteit.#Welke mogelijkheden zijn er voor interactie met de virtuele wereld?.)
 @snapend
 
-@snap[south-east span-30 fragment]
+@snap[south-east span-60 fragment]
 @box[bg-pink text-white box-narrow-padding](Passen bij de use case.#Hoe goed past en hoe logisch is de gekozen technologie?.)
 @snapend
 
