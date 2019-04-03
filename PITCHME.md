@@ -99,3 +99,30 @@ Boxed text fragments template.
 @snapend
 
 +++
+
++++?color=black
+@title[Longlist]
+
+@snap[north-west span-40]
+@box[bg-green text-white box-wide-padding](1. Algemene uitleg#Uitleg over de technologie en hoe deze kan gebruikt worden)
+@snapend
+
+@snap[north-east span-40]
+@box[bg-orange text-white box-wide-padding rounded](2. Specifieke uitleg#Uitleg die uniek is aan de technologie)
+@snapend
+
+@snap[south-east span-40]
+@box[bg-pink text-white box-wide-padding](3. Sensoren en algoritmen#Welke sensoren en algoritmen worden er gebruikt?)
+@snapend
+
+@snap[south-west span-40]
+@box[bg-blue text-white box-wide-padding waved](4. 3 Variabelen#Hoe worden de 3 variabelen toegepast bij de technologie?)
+@snapend
+
+@snap[midpoint]
+@fa[refresh fa-3x]
+@snapend
+
+@snap[south template-note text-white]
+Mixed styles<br>boxed template.
+@snapend
