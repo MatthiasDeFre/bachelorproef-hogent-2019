@@ -45,7 +45,7 @@ Uitleggen wat VR nu juist is.
 @snapend
 
 @snap[east span-70]
-<h2>Teleprescence</h2>
+<h2>Gelijke Use Cases</h2>
 @snapend
 
 @snap[north-east template-note text-gray]
@@ -63,5 +63,15 @@ Hoe is VR al gebruikt in musea.
 @snapend
 
 @snap[north-east template-note text-gray]
-Hoe is VR al gebruikt in musea.
+Extra Info bv. over sensoren.
+@snapend
+
++++?image=template/img/cityscape.png&position=bottom&size=100% 60%
+
+@snap[north span-65]
+@box[bg-blue text-white box-wide-padding rounded](Teleprescence#De illusie tussen het virtuele en het reële verbreken.)
+@snapend
+
+@snap[midpoint template-note text-gray]
+<br>Boxed text with title template.
 @snapend
