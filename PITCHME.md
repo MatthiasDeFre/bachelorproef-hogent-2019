@@ -4,7 +4,7 @@
 
 @fa[arrow-down text-black]
 
-+++?image=template/img/spotlight.png&position=top right&size=20% auto
++++?image=pitch/img/spotlight.png&position=top right&size=20% auto
 @title[Raamwerk]
 
 @snap[north-west]
@@ -24,7 +24,7 @@ Structure
   <br><br>
   @snapend
 
-+++?image=template/img/blue.jpg&position=left&size=30% 100%
++++?image=pitch/img/blue.jpg&position=left&size=30% 100%
 @title[Stand Van Zaken]
 @snap[west text-white]
 @size[3em](1.)
@@ -38,7 +38,7 @@ Structure
 Uitleggen wat VR nu juist is.
 @snapend
 
-+++?image=template/img/orange.jpg&position=left&size=30% 100%
++++?image=pitch/img/orange.jpg&position=left&size=30% 100%
 @title[Stand Van Zaken]
 @snap[west text-white]
 @size[3em](2.)
@@ -52,7 +52,7 @@ Uitleggen wat VR nu juist is.
 Hoe is VR al gebruikt in musea.
 @snapend
 
-+++?image=template/img/black.jpg&position=left&size=30% 100%
++++?image=pitch/img/black.jpg&position=left&size=30% 100%
 @title[Stand Van Zaken]
 @snap[west text-white]
 @size[3em](3.)
