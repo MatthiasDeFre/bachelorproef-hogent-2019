@@ -66,12 +66,36 @@ Hoe is VR al gebruikt in musea.
 Extra Info bv. over sensoren.
 @snapend
 
-+++?image=template/img/cityscape.png&position=bottom&size=100% 60%
++++?image=pitch/img/tele.png&position=bottom&size=100% 60%
 
 @snap[north span-65]
-@box[bg-blue text-white box-wide-padding rounded](Teleprescence#De illusie tussen het virtuele en het reële verbreken.)
+@box[bg-blue text-white box-wide-padding rounded](Teleprescence#De illusie tussen het virtuele en de echte wereld verbreken.)
 @snapend
 
 @snap[midpoint template-note text-gray]
-<br>Boxed text with title template.
+<br>Stand Van Zaken.
 @snapend
+
++++?color=black
+
+@snap[west span-45]
+# 3 Variabelen
+@snapend
+
+@snap[north-east span-60 fragment]
+@box[bg-purple text-white box-narrow-padding](Realisme.#Hoe kan de illusie van realisme worden bevorderd?.)
+@snapend
+
+@snap[east span-60 fragment]
+@box[bg-orange text-white box-narrow-padding](Interactviteit.#Welke mogelijkheden zijn er voor interactie met de virtuele wereld?.)
+@snapend
+
+@snap[south-east span-60 fragment]
+@box[bg-pink text-white box-narrow-padding](Passen bij de use case.#Hoe goed past en hoe logisch is de gekozen technologie?.)
+@snapend
+
+@snap[south-west template-note text-white]
+Boxed text fragments template.
+@snapend
+
++++
