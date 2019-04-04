@@ -2,7 +2,7 @@
 @title[Longlist]
 
 @snap[north-west span-40]
-@box[bg-green text-white box-wide-padding](1. Algemene uitleg#Uitleg over de technologie en hoe deze kan gebruikt worden)
+@box[bg-green text-white box-wide-padding](1. Algemene uitleg#Basis uitleg en gebruik)
 @snapend
 
 @snap[north-east span-40]

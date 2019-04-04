@@ -1,3 +1,4 @@
+---
 +++?image=pitch/img/spotlight.png&position=top right&size=20% auto
 @title[Raamwerk]
 
