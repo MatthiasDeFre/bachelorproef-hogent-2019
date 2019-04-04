@@ -11,5 +11,5 @@ Bachelorproef<br>*Pitch*
 
 ---?include=pitch/md/longlist/PITCHME.md
 
----?image=pitch/img/question.jpg
+---?image=pitch/img/question.png
 @title[Questions]
