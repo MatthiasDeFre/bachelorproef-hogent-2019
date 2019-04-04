@@ -10,3 +10,6 @@ Bachelorproef<br>*Pitch*
 ---?include=pitch/md/standvanzaken/PITCHME.md
 
 ---?include=pitch/md/longlist/PITCHME.md
+
+---?image=pitch/img/question.jpg
+@title[Questions]
