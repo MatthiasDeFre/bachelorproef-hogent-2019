@@ -3,7 +3,6 @@
 @snap[west text-25 text-bold text-white]
 Longlist
 @snapend
-
 +++?color=black
 @title[Cyclus]
 

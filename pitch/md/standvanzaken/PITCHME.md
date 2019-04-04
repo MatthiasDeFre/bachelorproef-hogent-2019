@@ -1,6 +1,9 @@
 ---?color=linear-gradient(to right, #00416A, #E4E5E6)
 @title[Stand Van Zaken]
-## @color[black](Stand Van Zaken)
+@snap[west text-25 text-bold text-white]
+Stand Van Zaken
+@snapend
+
 +++?image=pitch/img/blue.jpg&position=left&size=30% 100%
 @title[Stand 1]
 @snap[west text-white]
@@ -56,17 +59,17 @@ Extra Info bv. over sensoren.
 +++?color=black
 
 @snap[west span-45]
-# 3 Vars
+# 3 Vars 
 @snapend
 
 @snap[north-east span-60 fragment]
-@box[bg-purple text-white box-narrow-padding](Realisme.#Hoe kan de illusie van realisme worden bevorderd?.)
+@box[bg-purple text-white box-narrow-padding](Realisme.#Hoe kan de illusie van realisme worden bevorderd?)
 @snapend
 
 @snap[east span-60 fragment]
-@box[bg-orange text-white box-narrow-padding](Interactviteit.#Welke mogelijkheden zijn er voor interactie met de virtuele wereld?.)
+@box[bg-orange text-white box-narrow-padding](Interactviteit.#Welke mogelijkheden zijn er voor interactie met de virtuele wereld?)
 @snapend
 
 @snap[south-east span-60 fragment]
-@box[bg-pink text-white box-narrow-padding](Passen bij de use case.#Hoe goed past en hoe logisch is de gekozen technologie?.)
+@box[bg-pink text-white box-narrow-padding](Passen bij de use case.#Hoe goed past en hoe logisch is de gekozen technologie?)
 @snapend

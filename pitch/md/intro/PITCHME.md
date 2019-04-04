@@ -1,7 +1,10 @@
 ---?color=linear-gradient(to right, #00416A, #E4E5E6)
 @title[Raamwerk]
-## @color[black](Raamwerk)
+@snap[west text-25 text-bold text-white]
+Raamwerk
+@snapend
 
++++
 @snap[north-west]
 Structure
 @snapend
