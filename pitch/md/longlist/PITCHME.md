@@ -1,8 +1,12 @@
 ---?color=linear-gradient(to right, #00416A, #E4E5E6)
 @title[Longlist]
+@snap[west text-25 text-bold text-white]
+Longlist
+@snapend
 
 +++?color=black
 @title[Cyclus]
+
 @snap[north-west span-40]
 @box[bg-green text-white box-wide-padding](1. Algemene uitleg#Basis uitleg en gebruik)
 @snapend

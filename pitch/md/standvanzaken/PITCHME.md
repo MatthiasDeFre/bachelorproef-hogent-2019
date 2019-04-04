@@ -1,5 +1,6 @@
----?
+---?color=linear-gradient(to right, #00416A, #E4E5E6)
 @title[Stand Van Zaken]
+## @color[black](Stand Van Zaken)
 +++?image=pitch/img/blue.jpg&position=left&size=30% 100%
 @title[Stand 1]
 @snap[west text-white]

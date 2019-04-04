@@ -1,6 +1,6 @@
----
-+++?image=pitch/img/spotlight.png&position=top right&size=20% auto
+---?color=linear-gradient(to right, #00416A, #E4E5E6)
 @title[Raamwerk]
+## @color[black](Raamwerk)
 
 @snap[north-west]
 Structure
