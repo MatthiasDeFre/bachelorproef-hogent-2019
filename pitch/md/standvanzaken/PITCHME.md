@@ -1,5 +1,7 @@
-+++?image=pitch/img/blue.jpg&position=left&size=30% 100%
+---?
 @title[Stand Van Zaken]
++++?image=pitch/img/blue.jpg&position=left&size=30% 100%
+@title[Stand 1]
 @snap[west text-white]
 @size[3em](1.)
 @snapend
@@ -13,7 +15,7 @@ Uitleggen wat VR nu juist is.
 @snapend
 
 +++?image=pitch/img/orange.jpg&position=left&size=30% 100%
-@title[Stand Van Zaken]
+@title[Stand 2]
 @snap[west text-white]
 @size[3em](2.)
 @snapend
@@ -27,7 +29,7 @@ Hoe is VR al gebruikt in musea.
 @snapend
 
 +++?image=pitch/img/black.jpg&position=left&size=30% 100%
-@title[Stand Van Zaken]
+@title[Stand 3]
 @snap[west text-white]
 @size[3em](3.)
 @snapend
