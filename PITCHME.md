@@ -11,7 +11,7 @@ Bachelorproef<br>*Pitch*
 
 ---?include=pitch/md/longlist/PITCHME.md
 
-+++?image=pitch/img/question.png&size=80% auto 
+---?image=pitch/img/question.png&size=80% auto 
 @title[Questions]
 
 @snap[south-west template-note text-gray]
