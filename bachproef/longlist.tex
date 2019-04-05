@@ -5,23 +5,29 @@ Hierin worden de verschillende technologieën overlopen die kunnen gebruikt word
 Bij elke technologie zal er dan worden gezegd waarom deze voldoet of niet voldoet aan de eisen (TODO) van de use case.
 
 \section{Head Mounted Virtual Reality}
-Bij head mounted virtual reality wordt er gebruik gemaakt van een HDM (head-mounted-display) die de gebruiker op zijn hoofd zet. Deze headset zal dan een virtuele wereld tonen die volledig aangestuurd is door de applicatie zelf. Deze wereld zal dus geen rekening houden met de echte wereld, dit kan namelijk voor problemen zorgen indien er geen sensor of camera aanwezig is die je tegenhoud om tegen muren te lopen.
-\section{Medische Klachten}
-Sommige mensen kunnen bij het gebruik van een HDM ziek of misselijk worden. Dit wordt meestal veroorzaakt door een te klein of onnatuurlijk gezichtsveld (Field-Of-View, FoV) (INSERT CITE) of als de beweging in de applicatie wordt gedaan a.h.v. teleportatie. (INSERT CITE)
+Bij head mounted virtual reality wordt er gebruik gemaakt van een HDM (head-mounted-display) die de gebruiker op zijn hoofd zet. Deze headset zal dan een virtuele wereld tonen die volledig aangestuurd is door de applicatie zelf. Deze wereld zal dus geen rekening houden met de echte wereld, dit kan hierdoor wel voor problemen zorgen indien er geen sensor of camera aanwezig is die je tegenhoud om tegen muren te lopen.
 
+HMD kan over 3DOF of 6DOF beschikken afhankelijk van de gebruikte headset. De 3DOF headsets zijn wel goedkoper dan de 6DOF en maken vaak gebruik van de smartphone om zo het beeld te kunnen tonen. 
+\subsection{Medische Klachten}
+Sommige mensen kunnen bij het gebruik van een HDM ziek of misselijk worden. Dit wordt meestal veroorzaakt door een te klein of onnatuurlijk gezichtsveld (Field-Of-View, FoV) (INSERT CITE) of als de beweging in de applicatie wordt gedaan a.h.v. teleportatie. (INSERT CITE) Deze teleportatie beweging komt vooral voor bij 3DOF omdat hierbij er manieren zijn om de camerea te bewegen, namelijk teleportatie of via een joystick.
+
+Een de tijd tussen de beweging in de echte wereld en de virtuele kan ook invloed hebben op virtual reality sickness indien deze te hoog is \autocite{Elbamby2018} en \autocite{DiZio2000}.
+% TODO TRANSLATE disconnection
 Veel van deze problemen hebben te maken met de staat van de huidige hardware en hoe deze geen hogere FoV aan een hoge framerate kunnen ondersteunen. Een hoge en stabiele framerate is nodig indien om de gebruiker een aangename ervaring te geven. Een te lage framerate kan ervoor zorgen dat er (TRANSLATE) disconnection is tussen de beweging van de gebruiker en het gene dat effectief op het scherm gebeurt, dit kan voor frustratie zorgen.
-\section{Sensoren}
-\section{3 Variabelen}
+\subsection{Sensoren}
+De soorten sensoren die gebruikt worden bij een HMD hangt af van de gewenste bewegingen. Als er alleen maar rotationale bewegingen nodig zijn kan er gebruikt worden van een gyroscoop. Indien er ook positionale bewegingen nodig zijn moeten er infraroodsensoren in de kamer worden geplaatst om zo de headset te kunnen tracken. Deze sensoren zorgen er wel voor dat er meer voorbereiding nodig is alvorens de headset kan worden gebruikt.
 \subsection{Realisme}
+% TODO CONTENT Iets over latency => tijd tussen beweging hoofd en beweging in vr
 \subsection{Interactiviteit}
+Afhankelijk van het aantal vrijheidsgraden zal de interactiviteit van de applicatie uitbreiden. Bij 6DOF zal de gebruiker kunnen rondlopen in de wereld 
 \subsection{Bruikbaarheid}
 De bruikbaarheid van HMD in musea is nogal laag. Het is niet echt praktisch om gebruikers met een HMD (Google Cardboard of Full HMD) te laten rondlopen omdat dit veel ruimte in het museum zou kosten om goed te implementeren. Indien er toch zou worden gekozen om dit te implementeren kan bij er ook een hoge financiele kost aanhangen. Afhankelijk of de gebruikers moeten langskomen voor de applicatie uit te proberen of niet kan het zijn dat het museum headsets moet aankopen en hiervoor een speciale ruimte moet inrichten.
 
 Meeste mensen die naar een museum gaan willen juist rondlopen in het museum zelf rondlopen en niet in de virtuele versie hiervan. Het is daarom ook niet echt logisch om een HMD hiervoor te gebruiken. Natuurlijk als het museum wil gaan voor een ervaring zoals bij het Historium Brugge kan HMD wel op een goede manier worden gebruikt.
 
-\section{Augmented Reality}
+\section{Augmented Reality} \label{sec:augmentedreality}
 \section{360 Degrees Videos}
-\section{Mixed Reality}
+\section{Mixed Reality} \label{sec:mixedreality}
 Ook hierbij wordt er gebruik gemaakt van een HDM. Het grote verschil met virtual reality is dat er bij mixed reality ook rekening wordt gehouden met de echte wereld. Een mixed reality headset heeft namelijk de mogelijkheid om de echte wereld te mappen naar een virtuele wereld a.h.v. de camera die langs de voorkant gemonteerd is.
 
 Een mixed reality headset is ook uitgerust met verschillende sensoren om de positie binnen in de wereld te volgen. Door de combinatie van de mapping en sensoren is het dus niet nodig om extra sensoren te plaatsen om room-scale VR te te gebruiken.

@@ -62,9 +62,6 @@
   keywords = {Augmented reality},
 }
 
-@Electronic{,
-}
-
 @Article{Ding2017,
   author  = {Ding, Mandy},
   title   = {Augmented Reality in Museums},
@@ -74,9 +71,23 @@
 
 @Article{Shenchang1995,
   author  = {Shenchang, Eric Chen},
-  title   = {QuickTime VR – An Image-Based Approach to Virtual Environment Navigation},
+  title   = {QuickTime VR – An Image-Based Approach to Virtual Environment Navigation},
   journal = {Proceedings of the 22nd annual conference on Computer graphics and interactive techniques},
   year    = {1995},
+}
+
+@Article{Elbamby2018,
+  author  = {S. Elbamby, Mohammed and Perfecto, Cristina and Bennis, Mehdi and Doppler Klaus},
+  title   = {Towards Low-Latency and Ultra-Reliable Virtual Reality},
+  journal = {IEEE Network},
+  year    = {2018},
+}
+
+@Article{DiZio2000,
+  author  = {DiZio, Paul and Lackner, James R},
+  title   = {Motion Sickness Side Effects and Aftereffects of Immersive Virtual Environments Created with Helmetmounted Visual Displays},
+  journal = {The Capability of Virtual Reality to Meet},
+  year    = {2000},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
