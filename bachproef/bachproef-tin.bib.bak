@@ -90,4 +90,25 @@
   year    = {2000},
 }
 
+@Article{LaValle2014,
+  author  = {LaValle, Steven M. and Yershova, Anna, and Katsev, Max and Antonov Michael},
+  title   = {Head Tracking for the Oculus Rift},
+  journal = {IEEE International Conference on Robotics and Automation},
+  year    = {2014},
+}
+
+@Article{Xu2018,
+  author  = {Xu, Yi and Wu, Yuzhang and Zhou, Hui},
+  title   = {Multi-scale Voxel Hashing and Efficient 3D Representation for Mobile Augmented Reality},
+  journal = {IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops},
+  year    = {2018},
+}
+
+@Article{You1999,
+  author  = {You, Suya and Neumann, Ulrich and Azuma, Ronald},
+  title   = {Hybrid inertial and vision tracking for augmented reality registration},
+  journal = {Proceedings IEEE Virtual Reality},
+  year    = {1999},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
