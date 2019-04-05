@@ -62,4 +62,21 @@
   keywords = {Augmented reality},
 }
 
+@Electronic{,
+}
+
+@Article{Ding2017,
+  author  = {Ding, Mandy},
+  title   = {Augmented Reality in Museums},
+  journal = {Arts Management \& Technology Laboratory},
+  year    = {2017},
+}
+
+@Article{Shenchang1995,
+  author  = {Shenchang, Eric Chen},
+  title   = {QuickTime VR – An Image-Based Approach to Virtual Environment Navigation},
+  journal = {Proceedings of the 22nd annual conference on Computer graphics and interactive techniques},
+  year    = {1995},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
