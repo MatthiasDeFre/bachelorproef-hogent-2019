@@ -27,5 +27,7 @@ Longlist
 @fa[refresh fa-3x]
 @snapend
 
-+++?image=pitch/img/question.png&size=80% auto @title[Questions]
++++?image=pitch/img/question.png&size=80% auto 
+@title[Questions]
+
 @snap[south-west template-note text-gray] Vragen, opmerkingen of feedback? @snapend
