@@ -38,7 +38,7 @@ De belangrijkste factor die de echtheid van een applicatie verhoogt is de stimul
 Interactiviteit kan op verschillende manieren worden verhoogd, de manier waarop zal vaak afhangen van de gekozen technologie. Wanneer een HMD (Head Mounted Display) wordt gebruikt heeft de gebruiker beide handen vrij om acties te doen. Deze acties kunnen dan gebeuren door het herkennen van de lichaamsdelen of door externe controllers.
 Met het herkennen van de lichaamsdelen wordt er bedoeld dat de software effectief het lichaamsdeel zelf herkent en niet a.h.v. sensoren bevestigd op het lichaamsdeel. Deze techniek kan dus alleen worden gebruikt indien er gebruik wordt gemaakt van een camera bevestigd aan de voorkant van het apparaat (HoloLens, Smartphone) of een externe camera die lichaamsdelen herkent, bijvoorbeeld Microsoft Kinect \autocite{Ren2013}.
 Meestal zal een applicatie de vorm van een hand proberen te detecteren, a.h.v. deze vorm kan dan een 'gesture' worden herkent die dan gelinkt is aan een bepaalde actie \autocite{Piumsomboon2013}. 
-Voor het herkennen van gestures kan er gebruik worden gemaakt van computer vision \autocite{Ji2010}.
+Voor het herkennen van gestures kan er gebruik worden gemaakt van computer vision \autocite{Ji2013}.
 
 
 Alhoewel deze twee variabelen een grote rol spelen bij teleprescence moet er ook nog rekening worden gehouden met het doel van de applicatie. Een goed voorbeeld hiervan is Pokémon GO. Wanneer er wordt gekeken naar de implementatie van de 2 variabelen hierbij ziet men het volgende. De interactiviteit van de app is redelijk simpel, de spelers lopen rond in de echte wereld door hun gps te gebruiken en kunnen zo op het scherm een beweging doen om monsters te vangen. Realisme is dan geïmplementeerd door gebruik te maken van augmented reality, hierdoor kunnen de monsters in de echte wereld worden geplaatst. Zoals er te zien is zijn deze twee implementaties niet zo geavanceerd en kwamen ze al voor in andere apps (Ingress), maar toch is Pokémon GO veel succesvoller dan deze andere apps. Dit komt vooral omdat Pokémon GO voldoet aan de verwachte ervaring van de gebruiker, namelijk een echte trainer zijn zoals in de Pokémon games en serie \autocite{Tang2017}. Hieruit kan er dus worden afgeleid dat de graad waarop deze variabelen worden geïmplementeerd dus zal afhangen van de use case. Ook speelde het sociale aspect een grote rol in het continue succes van Pokémon GO, dit kan dus ook als een mogelijke invloed gezien worden waar er rekening mee moet worden gehouden \autocite{Tang2017}.
@@ -51,7 +51,7 @@ Het is dus voor deze reden dat er in deze studie een derde variabele wordt toege
 % TODO CONTENT Computer Vision
 Vooral wanneer er gebruik wordt gemaakt van Augmented of Mixed Reality zal men te maken krijgen met computer vision. Computer vision is interdisciplinair wetenschappelijk gebied dat verschillende domeinen bevat in verband met herkenning a.h.v. beeldmateriaal. Waaronder: herkennen van objecten, afbeeldingen, bewegingen maar ook het aanpassen van beelden om zo ruis te verwijderen valt hieronder (INSERT CITE).
 
-Voor vele van deze algoritmen wordt er gebruik gemaakt van artificiële intelligentie, een vaak gebruikte techniek is het gebruik van een 'convolutional neural network' \autocite{Ji2010}. Afhankelijk van het algoritme zal dit neuraal netwerk opzoek gaan naar features die nuttig zijn. Bij gezichtsherkenning is het vinden van de neus, ogen en randen van het gezicht belangrijk terwijl een automatische drone eerder wilt weten waar de obstakels zich bevinden. Met de gevonden features kan de applicatie dan het gezicht blijven volgen en een filter hierop toepassen of kan er een 3d object worden gemaakt (bijvoorbeeld een obstakel) in het geval van de drone. 
+Voor vele van deze algoritmen wordt er gebruik gemaakt van artificiële intelligentie, een vaak gebruikte techniek is het gebruik van een 'convolutional neural network' \autocite{Ji2013}. Afhankelijk van het algoritme zal dit neuraal netwerk opzoek gaan naar features die nuttig zijn. Bij gezichtsherkenning is het vinden van de neus, ogen en randen van het gezicht belangrijk terwijl een automatische drone eerder wilt weten waar de obstakels zich bevinden. Met de gevonden features kan de applicatie dan het gezicht blijven volgen en een filter hierop toepassen of kan er een 3d object worden gemaakt (bijvoorbeeld een obstakel) in het geval van de drone. 
 
 Het gebruik van computer vision wordt later verder besproken in de secties \ref{sec:augmentedreality} en \ref{sec:mixedreality}. % TODO (Mixed Reality => Spatial Mapping ²²² Augmented Reality => Image detection / ground detection)
 % TODO CITE referentie naar site https://hackernoon.com/building-a-facial-recognition-pipeline-with-deep-learning-in-tensorflow-66e7645015b8
@@ -63,17 +63,20 @@ Het gebruik van computer vision wordt later verder besproken in de secties \ref{
 
 \section{Degrees Of Freedom}
 
-VR technologieën kunnen ook nog eens worden onderverdeeld afhankelijk van het aantal vrijheidsgraden dat ze ondersteunen. In de wereld van VR komen 3DOF en 6DOF het meeste voor. Deze vrijheidsgraden bepalen in welke mate de gebruiker kan bewegen in de virtuele wereld \autocite{Shenchang1995}.
+VR technologieën kunnen ook nog eens worden onderverdeeld afhankelijk van het aantal vrijheidsgraden dat ze ondersteunen. In de wereld van VR komen 3DOF en 6DOF het meeste voor. Deze vrijheidsgraden bepalen in welke mate de gebruiker kan bewegen in de virtuele wereld \autocite{Chen1995}.
 
 % TODO TRANSLATE yaw, pitch, rol
 3DOF ondersteund alleen rotationele bewegingen, deze zijn: yaw, pitch en rol. Hiermee kan camera alleen maar worden gedraaid en niet van locatie veranderen. Bij 6DOF zijn is dit wel mogelijk omdat deze over volgende bewegingen beschikt: up and down, front and back en left and right. 
-Wanneer 6DOF wordt gebruikt kan er dus in de virtuele wereld worden rondgelopen alsook kan de camera nog steeds worden gedraaid omdat 6DOF beschikt over rotationale en positionele bewegingen, de ondersteuning van deze vrijheidsgraden ligt niet alleen bij de technologie zelf maar ook bij de gebruikte hardware \autocite{Shenchang1995}. In de longlist zal er in detail worden besproken hoeveel vrijheidsgraden ondersteund worden en welke hardware er juist nodig is om te gebruiken.
+Wanneer 6DOF wordt gebruikt kan er dus in de virtuele wereld worden rondgelopen alsook kan de camera nog steeds worden gedraaid omdat 6DOF beschikt over rotationale en positionele bewegingen, de ondersteuning van deze vrijheidsgraden ligt niet alleen bij de technologie zelf maar ook bij de gebruikte hardware \autocite{Chen1995}. In de longlist zal er in detail worden besproken hoeveel vrijheidsgraden ondersteund worden en welke hardware er juist nodig is om te gebruiken.
 
 \begin{figure}
     \includegraphics[width=\linewidth]{dof.jpg}
     \caption{Six degrees of freedom}
     \label{fig:dof}
 \end{figure}
+
+% TODO CONTENT Uitleg IMU
+% TODO CONTENT Uitleg odementry => hier of bij AR / MR
 
 \section{Gelijkaardige use cases}
 % TODO CONTENT Gelijkaardige use case
