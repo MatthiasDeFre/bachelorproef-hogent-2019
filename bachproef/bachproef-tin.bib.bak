@@ -161,4 +161,13 @@
   organization = {IEEE},
 }
 
+@InProceedings{Lee2010,
+  author       = {Lee, Hasup and Tateyama, Yoshisuke and Ogi, Tetsuro},
+  title        = {Realistic visual environment for immersive projection display system},
+  booktitle    = {2010 16th International Conference on Virtual Systems and Multimedia},
+  year         = {2010},
+  pages        = {128--132},
+  organization = {IEEE},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
