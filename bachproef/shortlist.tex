@@ -1,11 +1,5 @@
-\chapter{Shortlist frameworks ---GEKOZEN TECHNOLOGIE----}
+\chapter{Shortlist frameworks Augmented Reality}
 \label{ch:shortlist}
-
-In dit voorbeeld gebruik ik augmented reality
-
-Eerst zal er een kleine inleiding worden gegeven over verschillende algoritmen die worden gebruikt binnenin augmented reality zoals plane detection, image detection... zodat de gebruiker goed weet wat deze termen betekenen.
-
-Hierin worden de verschillende frameworks van de gekozen technologie uit de longlist overlopen en met elkaar vergeleken. Dit zal gebeuren door aan elk framework een score te geven gebaseerd op een lijst van must-haves en nice-to-haves. Deze zullen dan elk factor hebben die meer (must-have) of minder (nice-to-have) zal doorwegen in de score.
 
 Vb must-have: moet op zoveel mogelijk devices draaien => aantal procent van de devices kan dan de score zijn voor deze must have
 OF
@@ -13,7 +7,121 @@ een andere manier simpelere manier om dit voor te stellen zou a.h.v. sterren kun
 
 Onderste secties zijn voorbeelden indien augmented reality wordt gekozen.
 
+% TODO REMOVE TOP
+
+In de shortlist wordt de gekozen technologie uit de longlist, namelijk augmented reality, verder besproken.
+Eerst zal er een kleine inleiding worden gegeven over verschillende algoritmen die worden gebruikt binnenin augmented reality en die nog niet eerder besproken zijn in de longlist.
+
+Hierna worden verschillende frameworks van augmented reality met elkaar vergeleken. Dit zal gebeuren door aan elk framework een score te geven gebaseerd op een lijst van must-haves en nice-to-haves. Deze zullen dan elk factor hebben die meer (must-have) of minder (nice-to-have) zal doorwegen in de score.
+
+Voor elk framework worden de punten overlopen waarin zij uitblinken en wat hun uniek maakt tegenover de meerderheid van de competitie.
+
+\section{Uitleg Applicatie}
+Voor deze studie is er gekozen om een applicatie te ontwikkelen die features combineert van gelijkaardige use cases. De applicatie zal beschikken over de mogelijkheid om kunstwerken in te scannen en hierop digitale objecten te tonen. Ook moet er een menu beschikbaar zijn waar de gebruiker kan kiezen om een levensverhaal te beginnen volgen. In dit menu zal er ook een optie zijn om de ontdekte kunstwerken van een levensverhaal te bekijken op een tijdlijn die zo het leven voorstelt.
+
+\section{Requirements}
+Om de requirements van een applicatie op te schrijven zijn er verscheidene technieken. Voor deze use case worden de standaarden gebruikt van \textcite{Bradner1997}. Hierbij zijn er vijf verschillende soorten levels namelijk: MUST, MUST NOT, SHOULD, SHOULD NOT en MAY. Uit de bovenstaande uitleg over de applicatie en de uitleg in verband met teleprescence kunnen we volgende vereisten uithalen alsook nog optionele nice-to-haves toevoegen.
+
+Als extra moeten de ontdekte virtuele objecten ook in de wereld, zonder het bijhorend kunstwerk, in de virtuele wereld worden geplaatst door middel van plane detectie.
+
+\subsection{MUST}
+Deze vereisten moet het framework sowieso ondersteunen en zullen dus veel harder doorwegen op de uiteindelijke score van het framework.
+\begin{itemize}
+    \item Ondersteuning van image herkenning
+    \item Draaien op een groot aantal verschillende devices
+    \item Klikken op het scherm linken aan een actie
+    \item Tonen van informatie over het kunstwerk
+    \item Ondersteunen verschillende 3d object formaten
+\end{itemize} 
+
+\subsection{MUST NOT}
+Indien één van deze vereisten voorkomt bij het framework zal deze een negatieve invloed hebben op zijn score.
+\begin{itemize}
+    \item Verplicht gebruik van specifieke hardware (bv. sensoren, depth camera)
+    \item Verplicht gebruik van de meest recente versies van software
+\end{itemize} 
+
+\subsection{SHOULD}
+De SHOULD of RECOMMENDED vereisten zijn diegene waarbij het aangeraden is dat het framework ze ondersteund maar zijn hoofdzakelijk voor de uitgeschreven use case.
+\begin{itemize}
+    \item Ondersteuning van plane detectie en het plaatsen van virtuele objecten hierop
+    \item Ondersteuning van object herkenning
+    \item Goede development documentatie
+    \item Offline beschikbaar zijn
+\end{itemize} 
+
+\subsection{SHOULD NOT}
+De opgelijste vereisten van deze categorie komen liefst niet voor in een framework maar het is niet zo erg indien ze toch zouden voorkomen zolang het framework genoeg andere MUST en SHOULD vereisten heeft.
+\begin{itemize}
+    \item Hevige drifting
+\end{itemize} 
+
+\subsection{MAY}
+Deze vereisten zijn volledig optioneel en zullen niet zoveel invloed hebben op de score maar kunnen de ervaring van de gebruiker wel positief beïnvloeden.
+\begin{itemize}
+    \item Light estimation (aanpassen virtuele wereld indien licht in de echte wereld verandert)
+    \item Ondersteuning van browser
+     \item Virtuele buttons
+     \item Images blijven tracken als ze bewegen
+\end{itemize} 
+
 \section{8th Wall}
+Alhoewel ze zich de laatste tijd meer en meer hebben gefocust op 8th Wall Web heeft dit framework ook nog een tweede luik met 8th Wall XR. Het verschil tussen deze twee subframeworks is dat Web, zoals de naam het al duidelijk maakt, in een web browser draait. Echter zijn wel niet alle browsers ondersteund voor iOS is alleen Safari ondersteunt terwijl voor Android: Chrome, Chome varianten en Firefox ondersteund zijn \autocite{8thWallWebReq}.
+
+% TODO MOVE CONTENT
+De instapdrempel voor ontwikkeling ligt hierbij wel redelijk laag omdat vele developers toch al wat ervaring hebben met javascript en html.
+
+\subsection{8th Wall XR}
+Met dit onderdeel van 8th Wall kunnen native augmented reality applicaties ontwikkelt worden voor Android en ioS. Dit maakt gebruik van
+
+
+
 \section{ARCore}
+Het native AR framework voor Android, ontwikkelt door Google. Alhoewel dit framework speciaal gemaakt is voor Android biedt deze ook de mogelijkheid om apps te ontwikkelen voor iOS en zelfs voor een webbrowser \autocite{ARCoreOverview}. Omdat de webbrowser versie van ARCore alleen draait op Canary (de developer variant van Chrome) en ook hier nog eventjes zal blijven wordt deze niet verder besproken \autocite{ARCoreWeb}.
+
+Voor het ontwikkelen van een applicatie met ARCore zijn er verschillende mogelijkheden. Er kan gekozen worden om puur native te gaan en gebruik te maken van de iOS of Android SDK ook is er de optie om Unity of Unreal engine te gebruiken. Het voordeel hieraan is dat er veel keuze is in welke taal er geprogrammeerd kan worden. Indien Unreal of Unity gebruikt worden kunnen ontwikkelde applicaties makkelijk worden omgezet om op iOS en Android te kunnen draaien. 
+
+\subsection{Light Estimation}
+ARCore heeft de mogelijkheid om variatie in licht te herkennen en hierdoor de lichtinval op de virtuele objecten aan te passen om zo meer het gevoel te geven dat ze daadwerkelijk in de wereld staan. Dit verhoogt dan weer het niveau van teleprescence \autocite{ARCoreConcepts}.
+
+Niet alleen de lichtinval van de objecten kan worden aangepast, de virtuele objecten kunnen ook reageren op veranderingen in lichtniveau.
+\subsection{Cloud Anchors}
+Met de opkomst van zoveel mogelijk software over te schakelen naar de cloud was het ook logisch dat augmented reality uiteindelijk ging volgen. Aan de hand van cloud anchors kan een ankerpunt in een ruimte worden gedeeld met andere gebruikers. 
+
+Om een cloud anchor aan te maken moet de gewenste ruimte eerst gemapped zijn en hierin een ankerpunt zijn gecreëerd. De relatieve positie van dit punt naar verhouding van nabijgelegen feature points kan dan worden verstuurd naar de Google servers die deze data dan zal hosten. 
+
+Het hosten van deze data gebeurt door een Firebase databank die aan elk punt een id geeft, eens een ankerpunt gehost is zal er een roomcode worden teruggestuurd waarmee andere gebruikers het anker kunnen zien. Omdat een kamer soms meerdere ankerpunten heeft kan het ook soms zijn dat er meerdere punten aan één roomcode worden gelinkt \autocite{ARCoreCloudAnchors}.
+% TODO IMAGE LIGHT ESTIMATION
+% TODO TRANSLATE relative => De relatieve positie van dit punt naar verhouding van... ? ASK!
+\subsection{Requirements}
 \section{ARKit}
+ARKit is de native technologie voor iOS in tegenstelling tot ARCore kan met die framework wel alleen maar iOS applicaties worden ontworpen. 
+De ontwikkeling van ARKit applicaties kan gebeuren via XCode (de IDE van Apple), Unity of Unreal. XCode zal gebruik maken van Swift of Objective C terwijl Unity en Unreal hun taal gebruiken (C\# en C++ respectievelijk).
+% TODO CONTENT Extra info
+
+\subsection{Persistent Mapping}
+Sinds ARKit 2.0 is er de mogelijkheid om persistent mapping in ARKit applicaties te implementeren. Met dit kan een gemapde ruimte worden opgeslagen zodat de mapping tussen sessies opgeslagen blijft.
+Om bij een volgende sessie de mapping op te halen moet de camera van de smartphone terug worden geplaatst naar de locatie waar de mapping was opgeslagen. Eens deze volledig geladen is kunnen ook de ankerpunten worden teruggezet met hun virtuele objecten \autocite{ARKitPersistent}.
+
+\subsection{Multiuser Experience}
+Dit is een uitbreiding van persistent mapping waarbij mapping data tussen apparaten kan worden gedeeld. Het eerste apparaat moet de ruimte scannen en kan deze data dan doorsturen naar andere apparaten. Wanneer een virtueel object wordt geplaatst in de ruimte zal deze worden getoond bij alle apparaten.
+
+Om de communicatie tussen de devices te regelen wordt er gebruik gemaakt van peer-to-peer networking. Dit betekent dat, in tegenstelling met ARCore, er geen server nodig is om ankerpunten te delen. Een belangrijk iets om rekening mee te houden is dat standaard de applicatie zich met de eerst gevonden sessie zal verbinden. Indien dit niet correct geconfigureerd is kan dit wel voor problemen zorgen in plaatsen waar er veel sessies tegelijk zouden zijn zoals in musea.
+
+Alhoewel er geen server nodig is kan het soms wel handig zijn dat een apparaat als server handelt, indien dit gewenst is kan dit worden ingesteld.
+
+Nog een groot verschil met ARCore is dat bij ARCore alleen de locatie en feature points van de ankerpunten worden teruggestuurd terwijl bij ARKit de hele mapping data wordt doorgestuurd. Het versturen van deze data kan heel wat bandbreedte opnemen dus indien er veel apparaten zijn die met dezelfde sessie willen verbinden kunnen er problemen optreden \autocite{ARKitMultiuser}.
+
+\subsection{Requirements}
+
 \section{Vuforia}
+Net zoals 8th Wall biedt Vuforia de mogelijkheid om native applicaties te ontwikkelen voor Android en iOS. Vele andere frameworks ondersteunen ook het herkennen van images en sommige zelfs objecten maar geen enkel ander framework focust zich hier evenveel op als Vuforia.  
+Vuforia bied zes soorten herkenning aan, deze worden hieronder kort uitgelegd wat ze exact doen en hoe ze werken.
+
+
+\subsection{Model Targets}
+\subsection{Image Targets}
+\subsection{Multi Targets}
+\subsection{Cylinder Targets}
+\subsection{Object Tagets}
+\subsection{VuMarks}
