@@ -64,7 +64,7 @@ Omdat er rekening wordt gehouden met het camerabeeld hangt de accuraatheid van h
 % TODO IMAGE Point cloud / plane detection
 % TODO CITE Object Anchor, alleen maar concrete implementaties gevonden ARCORE / ARKIT https://developers.google.com/ar/develop/developer-guides/anchors
 \subsection{Image Recognition}
-Een tweede manier om virtuele objecten in de wereld te plaatsen is met image recognition. Ook hierbij wordt gebruik gemaakt van computer vision zoals te zien op figuur \ref{fig:imagereg}.
+Een tweede manier om virtuele objecten in de wereld te plaatsen is met image recognition. Ook hierbij wordt gebruikgemaakt van computer vision zoals te zien op figuur \ref{fig:imagereg}.
 
 Hierbij zal de image worden gebruikt als ankerpunt om de virtuele objecten op te plaatsen en te onthouden. Eens de image herkent is kunnen de objecten erop worden geplaatst. Wanneer de smartphone de afbeelding niet meer kan zien zal deze de positie van het object, na een tijdje, vergeten en zal tracking worden uitgezet. Vanaf de smartphone de afbeelding weer herkent kan het terug worden weergegeven.
 
@@ -82,28 +82,28 @@ Omdat augmented reality geen besef heeft van aanpassingen in de wereld, bv een p
 Er zijn wel nog extra technieken die frameworks kunnen gebruiken om toch nog wat extra immersie te creëren zoals light estimation. Bij dit kunnen virtuele objecten reageren wanneer de echte wereld lichter of donkerder wordt (INSERT CITE GOOGLE).
 
 \subsection{Interactiviteit}
-Het gebruik van een smartphone kan de interactiviteit van een applicatie verminderen omdat de gebruiker deze moet vasthouden en dus maar één hand vrij heeft. Dit probleem kan echter wel worden opgelost indien er een augmented reality headset wordt gebruikt.
+Het gebruik van een smartphone kan de interactiviteit van een applicatie verminderen omdat de gebruiker deze moet vasthouden en dus maar één hand vrij heeft. Door gebruik te maken van een augmented reality headset zal dit probleem zich wel oplossen.
 
 De virtuele wereld zal wel nooit echt reageren op fysieke handelingen wat er dus voor zorgt dat elke actie op het scherm van de smartphone moet gebeuren.
 
 Alhoewel deze twee zaken als grote nadelen kunnen gezien worden kan men hier ook gebruik van maken. Aangezien de smartphone in de hand is kunnen ook niet augmented reality zaken worden gebruikt. Er kan bijvoorbeeld een menu zijn waar de gebruiker verschillende rondleidingen uit kan kiezen.
 
 \subsection{Bruikbaarheid}
-Het gebrek aan een kabel bij augmented reality zorgt er voor dat dit op vele plaatsen kan gebruikt worden. Vooral bij musea is dit handig omdat het hele museum kan gebruikt worden en er geen speciale ruimtes nodig zijn.
+Het gebrek aan een kabel bij augmented reality zorgt er voor dat dit op vele plaatsen bruikbaar is. Vooral bij musea is dit handig omdat het hele museum kan dienen als platform voor de virtuele wereld en er geen speciale ruimtes nodig zijn.
 
 Vele mensen die naar musea gaan hebben vaak hun smartphone bij wat er dus voor zorgt dat de gebruiker alleen een app nodig heeft om mee te doen aan de ervaring.
 
-Image en object recognition is ook iets dat heel makkelijk kan gebruikt worden in musea omdat bestaande kunstwerken kunnen dienen als objecten waar de virtuele content op kan worden getoond.
+Image en object recognition is ook iets dat heel makkelijk te implementeren is in musea omdat bestaande kunstwerken kunnen dienen als objecten voor het weergeven van de virtuele content.
 
 \section{360 Degrees Videos}
 360 Degrees Videos is de simpelste vorm van virtual reality in deze longlist. Eigenlijk zijn dit gewoon videos waarbij de gebruiker de camera 360 graden kan draaien \autocite{Hosseini2016}.
 
-Om deze video's te bekijken is er eigenlijk niets speciaal nodig. Als een 360 graden video op een desktop wordt bekeken zal de camera nog altijd kunnen draaien door middel van de pijltjestoetsen. Terwijl wanneer deze op een apparaat met een IMU zal draaien door met het apparaat te bewegen. Wanneer er een IMU wordt gebruikt kan er nog altijd een onderscheid tussen een HMD en een gewoon apparaat. Als een HMD aanwezig zal de video worden getoond in VR. Bij een gewoon device zal de video echter zoals een normale video worden getoond maar wel met de mogelijkheid om de camera te draaien.
+Om deze video's te bekijken is er eigenlijk niets speciaal nodig. Als een 360 graden video op een desktop wordt bekeken zal de camera nog altijd kunnen draaien door middel van de pijltjestoetsen. Terwijl wanneer deze op een apparaat met een IMU zal draaien door met het apparaat te bewegen. Wanneer er een IMU wordt gebruikt kan er nog altijd een onderscheid tussen een HMD en een gewoon apparaat. Als een HMD aanwezig zal de video worden getoond in VR. Bij een gewoon device zal de video echter een normale video zijn maar wel met de mogelijkheid om de camera te draaien.
 
 \subsection{Recording}
 Het opnemen van deze video is wel iets ingewikkelder. Er zijn twee formaten om een 360 graden video voor te stellen namelijk equirectangular en cubic \autocite{Lee2010}. 
 
-Bij het equirectangular formaat wordt elke frame van de video op een vlakke afbeelding geprojecteerd. Deze afbeelding kan dan op een bol worden gelegd en deze bol zal de video voorstellen. Een makkelijke manier om een equirectangular afbeelding voor te stellen is namelijk een wereldkaart. Wanneer men een wereldkaart op een bol legt zal deze een wereldbol worden.
+Bij het equirectangular formaat zal deze elke frame van de video op een vlakke afbeelding projecteren. Deze afbeelding kan dan op een bol worden gelegd en deze bol zal de video voorstellen. Een makkelijke manier om een equirectangular afbeelding voor te stellen is namelijk een wereldkaart. Wanneer men een wereldkaart op een bol legt zal deze een wereldbol worden.
  
 \begin{figure}
     \includegraphics[width=\linewidth]{equirectangular.png}
@@ -111,7 +111,7 @@ Bij het equirectangular formaat wordt elke frame van de video op een vlakke afbe
     \label{fig:equirectangularprojection}
 \end{figure}
 
-Het cubic formaat werkt ongeveer op dezelfde manier behalve dat hierbij de frame zal worden opgedeeld in zes afbeeldingen die elk een zijde van de kubus zal voorstellen.
+Het cubic formaat werkt ongeveer op dezelfde manier behalve dat deze de frame in zes afbeeldingen zal opdelen die elk een zijde van de kubus zal voorstellen.
 
 % TODO ASK Uitleg van projectie op vlakke afbeelding?
 \subsection{Realisme}
@@ -120,14 +120,14 @@ Een 360 graden video kan bestaan uit echte beelden of virtuele beelden op die ma
 Wanneer men kijkt naar de sensorama kan men zien dat dit eigenlijk ook een 360 graden video is. Hier werd de ervaring immersief gemaakt door de zintuigen te stimuleren en zoals al eerder vermeld is dit één van de belangrijkste manieren waarop het gevoel van realisme kan worden opgewekt.
 
 \subsection{Interactiviteit}
-Het enigste wat een gebruiker kan doen bij een 360 graden video is het ronddraaien van de camera hierdoor is de interactiviteit minimaal. Toch zijn er 360 apps die net iets meer interactiviteit hebben, bij deze is er bijvoorbeeld de mogelijkheid om naar objecten te kijken en daarover informatie te tonen. Of er kunnen voorwerpen in de video worden verstopt die de gebruiker moet vinden. 
+Het enigste wat een gebruiker kan doen bij een 360 graden video is het ronddraaien van de camera hierdoor is de interactiviteit minimaal. Toch zijn er 360 apps die net iets meer interactiviteit hebben, bij deze is er bijvoorbeeld de mogelijkheid om naar objecten te kijken en daarover informatie te tonen. Ook is er de mogelijkheid om voorwerpen te verstoppen in de video waar de gebruiker dan op zoek naar moet gaan.
 \subsection{Bruikbaarheid}
-Omdat de video op elk apparaat dat Youtube of een andere 360 player ondersteund kan draaien is het heel bruikbaar. Echter om de volledige ervaring te krijgen wordt er best wel gebruik gemaakt van een HMD.
+Omdat de video op elk apparaat dat Youtube of een andere 360 player ondersteund kan draaien is het heel bruikbaar. Echter om de volledige ervaring te krijgen wordt er best wel gebruikgemaakt van een HMD.
 
-Hierbij komt echter hetzelfde probleem voor als bij virtual reality. Het is niet echt logisch dat dit wordt gebruikt in musea want gebruikers komen naar het museum om het fysiek te bezoeken en niet virtueel.
+Hierbij komt echter hetzelfde probleem voor als bij virtual reality. Het is niet echt logisch dat musea deze technologie gebruiken omdat de meeste bezoekers naar een museum komen om dit fysiek te bezoeken en niet virtueel.
 
 \section{Mixed Reality} \label{sec:mixedreality}
-Ook hierbij wordt er gebruik gemaakt van een HDM. Het grote verschil met virtual reality is dat er bij mixed reality ook rekening wordt gehouden met de echte wereld. Een mixed reality headset heeft namelijk de mogelijkheid om de echte wereld te mappen naar een virtuele wereld a.h.v. de camera die langs de voorkant gemonteerd is.
+Ook Mixed Reality zal gebruik maken van een HDM. Het grote verschil met virtual reality is dat er bij mixed reality ook rekening wordt gehouden met de echte wereld. Een mixed reality headset heeft namelijk de mogelijkheid om de echte wereld te mappen naar een virtuele wereld a.h.v. de camera die langs de voorkant gemonteerd is.
 
 Een mixed reality headset is ook uitgerust met verschillende sensoren om de positie binnen in de wereld te volgen. Door de combinatie van de mapping en sensoren is het dus niet nodig om extra sensoren te plaatsen om room-scale VR te te gebruiken.
 
@@ -145,12 +145,12 @@ Het algoritme dat gebruikt wordt voor de mapping is spatial mapping. Dit algorit
 \subsection{Interactiviteit}
 In tegenstelling tot augmented reality zal mixed reality wel rekening houden met de fysieke wereld. Op deze manier kan de gebruiker zijn handen gebruiken om met de virtuele wereld te communiceren. Hierdoor zijn er veel verschillende mogelijkheden om dit in een applicatie te implementeren.
 
-Ook kan de headset gebruik maken van een gewone 6DOF controller of deze manier moet er geen rekening worden gehouden met welke gestures er ondersteund zijn.
+Ook kan de headset gebruikmaken van een gewone 6DOF controller op deze manier moet er geen rekening worden gehouden met welke gestures er ondersteund zijn.
 
 \subsection{Bruikbaarheid}
-Een mixed reality headset heeft, zolang deze niet moet worden opgeladen, ook geen kabel nodig en kan dus in het hele museum worden gebruikt alsook moeten er geen externe sensoren worden geplaatst om aan room scale VR te doen. 
+Een mixed reality headset heeft, zolang deze niet aan het opgeladen is, ook geen kabel nodig en kan dus in het hele museum worden gebruikt alsook heeft deze geen externe sensoren nodig om aan room scale VR te doen. 
 
-Het grote nadeel van een mixed reality headset is namelijk de prijs. Indien de applicatie wordt gemaakt voor thuisgebruik zal de doelgroep beperkt zijn, terwijl als het de bedoeling is dat de applicatie in het museum zelf wordt gebruikt de kost voor het museum hoog zal zijn.
+Het grote nadeel van een mixed reality headset is namelijk de prijs. Indien de applicatie ontwikkelt is voor thuisgebruik zal de doelgroep beperkt zijn, terwijl als het de bedoeling is om de applicatie te gebruiken in het museum zelf kan de kost wel nog oplopen.
 
 % TODO ASK Uitleg gyropscoop? te ingewikkeld?
 % TODO CONTENT Depth Camera
@@ -159,6 +159,6 @@ Het grote nadeel van een mixed reality headset is namelijk de prijs. Indien de a
 \section{Conclusie Longlist}
 Wanneer alle technologieën naast elkaar worden gelegd en er naar de drie variabelen wordt gekeken kan men zien dat elke technologie wel zijn voordelen heeft maar ook telkens zijn nadelen heeft. De `beste` technologie zal dus afhangen variëren van musea tot musea. 
 
-Musea met veel geld zullen bijvoorbeeld kiezen om gebruik te maken van mixed reality om zo de meest interactieve en realistische ervaring te geven. Terwijl een stadsmuseum met een beperkt budget misschien eerder zal kiezen voor augmented reality om zo het ruime publiek dat zij over vloer krijgen aan te spreken. Het is ook voor deze reden dat augmented reality verder wordt besproken in de shortlist omdat deze de meest gemiddelde ervaring bied.
+Musea met veel geld zullen bijvoorbeeld kiezen om gebruik te maken van mixed reality om zo de meest interactieve en realistische ervaring te geven. Terwijl een stadsmuseum met een beperkt budget misschien eerder zal kiezen voor augmented reality om zo het ruime publiek dat zij over vloer krijgen aan te spreken. Het is ook voor deze reden dat augmented reality verder wordt besproken in de shortlist omdat deze de meest gemiddelde ervaring biedt.
 
-Augmented reality bied namelijk een goed niveau van realisme zolang dit goed geimplementeerd en wanneer er originele (maar passende) features in de applicatie worden gestopt zal er ook tamelijk wat interactiviteit mogelijk zijn. Ook omdat alleen een smartphone nodig is zal een groot doelpubliek worden aangesproken.
+Augmented reality biedt namelijk een goed niveau van realisme zolang dit goed geimplementeerd en wanneer de applicatie originele (maar passende) features bevat zal er ook tamelijk wat interactiviteit mogelijk zijn. Ook omdat alleen een smartphone nodig is zal een groot doelpubliek hebben.
