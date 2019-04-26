@@ -6,6 +6,9 @@
 \documentclass[fleqn,a4paper,12pt]{book}
 
 \input{structure}
+\input{glossary}
+\makeglossaries
+
 
 %%---------- Documenteigenschappen --------------------------------------------
 %% TODO: Vul dit aan met je eigen info:
@@ -80,6 +83,8 @@
 % Als je een lijst van afkortingen of termen wil toevoegen, dan hoort die
 % hier thuis. Gebruik bijvoorbeeld de ``glossaries'' package.
 % https://www.sharelatex.com/learn/Glossaries
+\printglossary
+\printglossary[type=\acronymtype]
 
 %%---------- Kern -------------------------------------------------------------
 
