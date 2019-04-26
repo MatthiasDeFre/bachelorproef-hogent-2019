@@ -148,10 +148,19 @@ Sommige headsets ondersteunen ook het herkennen van bepaalde handbewegingen, met
 % TODO Content gesture herkenning
 
 \subsection{Spatial Mapping}
-Het algoritme dat gebruikt wordt voor de mapping is spatial mapping. Dit algoritme % TODO CONTENT Uitleg spatial mapping
+Door gebruik te maken van de dieptecamera's die aanwezig zijn in de Mixed Reality headsets is het mogelijk om een mesh (een virtueel object dat bestaat uit driehoeken, zie figuur \ref{fig:mesh}) te maken die de ruimte voorstelt \autocite{Evans2017}. De applicatie zal dan de virtuele objecten op deze mesh plaatsen om ze weer te geven. 
 
+\begin{figure}
+    \includegraphics[width=\linewidth]{mesh.jpg}
+    \caption{Mesh gemaakt door HoloLens spatial mapping algoritme}
+    \label{fig:mesh}
+\end{figure}
+
+Zoals te zien op figuur \ref{fig:mesh} bevat de mesh redelijk veel detail over de ruimte, toch kan soms moeilijk om kleine details uit een mesh te krijgen \autocite{Evans2017}.
+
+% TODO IMAGE Mesh
 \subsection{Realisme}
-
+Mixed reality zal één van de meest realistische VR technologieën zijn omdat deze de kracht van augmented en virtual reality bevat. Het is mogelijk om virtuele objecten in de echte wereld te plaatsen en om hier ook fysiek mee te reageren. Een extra vorm van realisme komt door het gebruik van occlusion. Dit is wanneer een virtueel object wordt geblokkeerd door een ander virtueel of zelfs fysiek object. Op deze manier zal de gebruiker nog meer het gevoel krijgen dat de virtuele wereld deel uit maakt van de echte \autocite{Evans2017}.
 
 \subsection{Interactiviteit}
 In tegenstelling tot augmented reality zal mixed reality wel rekening houden met de fysieke wereld. Op deze manier kan de gebruiker zijn handen gebruiken om met de virtuele wereld te communiceren. Hierdoor zijn er veel verschillende mogelijkheden om dit in een applicatie te implementeren.
