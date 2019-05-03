@@ -266,4 +266,11 @@
   organization = {International Society for Optics and Photonics},
 }
 
+@Misc{UnityProfiling,
+  author = {{Unity}},
+  title  = {Profiler Window},
+  year   = {2019},
+  url    = {https://docs.unity3d.com/Manual/ProfilerWindow.html},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}

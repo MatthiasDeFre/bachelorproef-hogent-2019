@@ -576,8 +576,8 @@ addtohook={%
 %
 % Je kan dit aanpassen aan de taal die je zelf het meeste gebruikt in je
 % bachelorproef.
-\newcommand{\codefragment}[2]{ \lstset{%
-  language=java,
+\newcommand{\codefragment}[3]{ \lstset{%
+  language=[Sharp]C,
   breaklines=true,
   float=th,
   caption={#2},
@@ -585,7 +585,10 @@ addtohook={%
   frame=single,
   extendedchars=\true
 }
-\lstinputlisting{#1}}
+\lstinputlisting{#1}
+\label{#3}}
+
+
 
 % Leeg blad
 \newcommand{\emptypage}{%

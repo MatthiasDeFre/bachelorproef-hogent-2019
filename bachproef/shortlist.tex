@@ -3,10 +3,10 @@
 
 In de shortlist wordt de gekozen technologie uit de longlist, namelijk augmented reality, verder besproken.
 Eerst volgt er een uitleg over wat de uiteindelijke applicatie moet bevatten.
-Hierna volgt er een oplijsting van de verschillende frameworks van augmented reality. Per framework is er uitleg over wat het framework exact is, welke algoritmen deze gebruikt en aan welke requirements deze al dan niet voldoet. Aan de hand van deze zal elk framework dan een score krijgen die invloed zal hebben of dit framework wordt opgenomen in het experiment of niet.
+Hierna volgt er een oplijsting van de verschillende frameworks van augmented reality. Per framework is er uitleg over wat het framework exact is, welke algoritmen deze gebruikt en aan welke requirements deze al dan niet voldoet. Aan de hand van deze krijgt elk framework dan een score krijgen die invloed heeft of dit framework wordt opgenomen in het experiment of niet.
 
 \section{Uitleg Applicatie}
-Voor deze studie is er gekozen om een applicatie te ontwikkelen die features combineert van soortgelijke use cases. De applicatie zal beschikken over de mogelijkheid om kunstwerken in te scannen en hierop digitale objecten te tonen. Ook moet er een menu beschikbaar zijn waar de gebruiker kan kiezen om een levensverhaal beginnen te volgen. In dit menu zal er ook een optie zijn om de ontdekte kunstwerken van een levensverhaal te bekijken op een tijdlijn die zo het leven voorstelt.
+Voor deze studie is er gekozen om een applicatie te ontwikkelen die features combineert van soortgelijke use cases. De applicatie beschikt over de mogelijkheid om kunstwerken in te scannen en hierop digitale objecten te tonen. Ook is er een menu beschikbaar waar de gebruiker kan kiezen om een levensverhaal beginnen te volgen. In dit menu is er ook een optie om de ontdekte kunstwerken van een levensverhaal te bekijken op een tijdlijn die zo het leven voorstelt.
 
 Om er voor te zorgen dat gebruikers niet te veel gebonden zijn aan de chronologie van het levensverhaal kunnen ze er ook voor kiezen om zonder rondleiding rond te lopen in het museum en op deze manier de kunstwerken te scannen.
 
@@ -16,7 +16,7 @@ Als extra moet er ook de mogelijkheid zijn om de virtuele objecten in de wereld 
 Om de requirements van een applicatie op te schrijven zijn er verscheidene technieken. Voor deze use case worden de standaarden gebruikt van \textcite{Bradner1997}. Hierbij zijn er vijf verschillende soorten levels namelijk: MUST, MUST NOT, SHOULD, SHOULD NOT en MAY. Uit de bovenstaande uitleg over de applicatie en de uitleg in verband met teleprescence kunnen we volgende vereisten uithalen alsook nog optionele nice-to-haves toevoegen. Deze vereisten kunnen een positieve of negatieve invloed hebben op de score van het framework, de maximum score die een framework kan halen is 31.
 
 \subsection{MUST}
-Deze vereisten moet het framework sowieso ondersteunen en zullen dus veel harder doorwegen op de uiteindelijke score van het framework per MUST voorwaarde die voldaan is zal de score worden verhoogt met 5 terwijl het ontbreken van een voorwaarde een negatieve invloed zal hebben van -5.
+Deze vereisten moet het framework sowieso ondersteunen en zullen dus veel harder doorwegen op de uiteindelijke score van het framework per MUST voorwaarde die voldaan is wordt de score met 5 verhoogt terwijl het ontbreken van een voorwaarde een negatieve invloed heeft van -5.
 \begin{itemize}
     \item Ondersteuning van image herkenning
     \item Draaien op een groot aantal verschillende devices
@@ -26,14 +26,14 @@ Deze vereisten moet het framework sowieso ondersteunen en zullen dus veel harder
 \end{itemize} 
 
 \subsection{MUST NOT}
-Indien één van deze vereisten voorkomt bij het framework zal het framework niet meer in aanmerking komen om opgenomen te worden in het experiment.
+Indien één van deze vereisten voorkomt bij het framework komt het framework niet meer in aanmerking komen om opgenomen te worden in het experiment.
 \begin{itemize}
     \item Verplicht gebruik van specifieke hardware (bv. sensoren, depth camera)
     \item Verplicht gebruik van de meest recente versies van software
 \end{itemize} 
 
 \subsection{SHOULD}
-De SHOULD of RECOMMENDED vereisten zijn diegene waarbij het aangeraden is dat het framework ze ondersteund maar zijn niet verplicht voor een uiterst basisimplementatie van de applicatie. Het hebben van deze vereisten zal de score per vereiste verhogen met 3 maar zal geen negatieve invloed hebben indien deze toch zouden ontbreken.
+De SHOULD of RECOMMENDED vereisten zijn diegene waarbij het aangeraden is dat het framework ze ondersteund maar zijn niet verplicht voor een uiterst basisimplementatie van de applicatie. Het hebben van deze vereisten verhoogt de score per vereiste met 3 maar heeft geen negatieve invloed  indien deze toch ontbreken.
 \begin{itemize}
     \item Ondersteuning van plane detectie en het plaatsen van virtuele objecten hierop
     \item Ondersteuning van object herkenning
@@ -42,7 +42,7 @@ De SHOULD of RECOMMENDED vereisten zijn diegene waarbij het aangeraden is dat he
 \end{itemize} 
 
 \subsection{SHOULD NOT}
-De opgelijste vereisten van deze categorie komen liefst niet voor in een framework maar het is niet zo erg indien ze toch zouden voorkomen zolang het framework genoeg andere MUST en SHOULD vereisten heeft. Het is hierdoor dat dit maar een kleine negatieve invloed zal hebben van -3.
+De opgelijste vereisten van deze categorie komen liefst niet voor in een framework maar het is niet zo erg indien ze toch zouden voorkomen zolang het framework genoeg andere MUST en SHOULD vereisten heeft. Het is hierdoor dat dit maar een kleine negatieve invloed heeft van -3.
 \begin{itemize}
     \item Hevige drifting
 \end{itemize} 
