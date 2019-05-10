@@ -273,4 +273,18 @@
   url    = {https://docs.unity3d.com/Manual/ProfilerWindow.html},
 }
 
+@Misc{VuforiaARCore,
+  author = {{Vuforia}},
+  title  = {Using ARCore with Vuforia Engine},
+  year   = {2019},
+  url    = {https://library.vuforia.com/content/vuforia-library/en/articles/Solution/arcore-with-vuforia.html},
+}
+
+@Misc{UnityCulling,
+  author = {{Unity}},
+  title  = {{Occlusion Culling}},
+  year   = {2019},
+  url    = {https://docs.unity3d.com/Manual/OcclusionCulling.html},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
