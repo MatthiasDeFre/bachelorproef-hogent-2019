@@ -56,7 +56,7 @@ cor(x = vuforiaMerged$AllocatedMemory, vuforiaMerged$Fps)
 cor(x = vuforiaMerged$AllocatedMemory, vuforiaMerged$FpsDecrease)
 cor(x= vuforiaMerged$AllocatedMemoryIncrease, vuforiaMerged$Fps)
 cor(x= vuforiaMerged$AllocatedMemoryIncrease, vuforiaMerged$FpsDecrease)
-cor(x = vuforiaMerged$ReservedMemory, vuforiaMerged$Fps)
+
 
 # ARCore
 arcoreMerged <- multmerge(paste(datalocation, "arcoreData", sep = "/", collapse = NULL))

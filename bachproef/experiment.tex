@@ -1,17 +1,21 @@
 \chapter{Experiment}
 \label{ch:experiment}
 
-(TODO RAAMWERK) Indien een bepaald framework boven een bepaalde scoregrens ligt zal deze worden opgenomen in het experiment.
-Voor het experiment zal een simpele applicatie worden ontwikkelt (touch op het scherm creëert een object) voor elk framework a.h.v. deze applicatie zullen dan volgende kenmerken worden gemeten:  FPS, memory usage.
-
-Indien ik informatie vindt over het automatisch testen van AR applicaties zal deze ook hier terecht komen. Ook zal dit een invloed hebben op het uitvoeren van de experimenten. Als ik hierover bruikbare informatie vind zal ik deze ook gebruiken om het experiment meerdere malen uit te voeren i.p.v. het gelimiteerde aantal keren indien ik het manueel moet doen.
+In dit hoofdstuk worden de resultaten besproken van het experiment tussen Vuforia en ARCore. De eerste sectie van dit hoofdstuk gaat over hoe goed beide frameworks de vijftien afbeeldingen hebben herkent. De achtereenvolgende hoofdstukken hebben te maken met de analyse van de data uit het experiment. Tot slot is er een conclusie waarin één van de frameworks bekroond is als winnaar.
 
 \section{Afbeeldingsherkenning}
-Elk framework zal ook een lijst krijgen van 10 afbeeldingen om te kijken hoe goed hij verschillende afbeeldingen kan herkennen. Hier zal er ook worden gekeken van hoever hij deze kan herkennen!
-Een conclusie waarom bepaalde afbeeldingen niet worden herkent kan hier ook in komen
+Bij de vijf initiële experimenten heeft ARCore alle afbeeldingen herkent terwijl Vuforia één afbeelding niet kon herkennen namelijk George3 (INSERT LINK GITHUB REPO). Vuforia herkende de afbeelding niet door de lage verlichting die aanwezig was. Wanneer de verlichting op de afbeelding verhoogde herkende Vuforia de afbeelding direct (zie figuur \ref{fig:vuforiaDarkImage}.
+
 \begin{figure}
-    \includegraphics[width=\textwidth]{img/imgrex}\caption{Tabel aantal meter tot herkenning}\label{fig:imgrex}
+    \includegraphics[width=\linewidth]{vuforiaDarkImage.png}
+    \caption{Vuforia: Het herkennen van een afbeelding gaat niet als er te weinig belichting is}
+    \label{fig:vuforiaDarkImage}
 \end{figure}
+
+
+Het interessante aan dit deel van het experiment is dat beide frameworks afbeeldingen met een lage score makkelijk konden herkennen. Vuforia had bijvoorbeeld geen moeite met het herkennen van afbeelding George1 die maar een score heeft van één ster. ARCore kon afbeelding George4 (score 0) en augmentedImageBad1 (score 5) ook zonder veel moeite herkennen.
+
+ARCore scoort dus bij dit onderdeel iets beter door het herkennen van afbeeldingen in donkere ruimtes.
 
 \section{FPS}\label{sec:fps}
 
@@ -93,8 +97,45 @@ Wanneer het gereserveerde RAM stijgt is het ook logisch dat gealloceerde RAM sti
 \end{table}
 
 \subsection{Correlatie RAM en FPS}
-Zoals er eerder vermeld in sectie \ref{sec:fps} kampen beide frameworks met FPS drops. Om deze FPS drops te verklaren 
+Zoals er eerder vermeld in sectie \ref{sec:fps} kampen beide frameworks met FPS drops. Om deze FPS drops te verklaren is er onderzoek gedaan of er een verband is tussen stijgingen in RAM-verbruik en FPS.
 
+Uit de tabellen \ref{tbl:ramfps} en \ref{tbl:ramdropfps} is het duidelijk dat er bij Vuforia een verband aanwezig is tussen stijgingen in gereserveerd en gealloceerd RAM en FPS drops. Tussen deze stijgingen en FPS is er een negatief verband aanwezig wat erop wijst dat de FPS zal dalen wanneer er een stijging zal plaatsenvinden. Dit wordt ook nog eens bevestigd in \ref{tbl:ramdropfps} waarbij er een positief verband aanwezig is wat wijst op een stijging in het aantal gedropte frames wanneer het RAM stijgt. Bij ARCore is er alleen bij de FPS drops een verband aanwezig. Dit is te verklaren door de grote FPS drops die Vuforia ervaart bij het opstarten van de applicatie.
+\begin{table}[]
+    \begin{tabular}{l|ll|l|l}
+        & Reserveerd & Stijging reserveerd & Alloceerd  & Stijging alloceerd \\ \hline
+        Vuforia & 0.01598619 & -0.9604763          & 0.01714372 & -0.9107168         \\
+        ARCore  & 0.04140291 & -0.2194807          & 0.04099924 & -0.2321268        
+    \end{tabular}
+\caption{Correlatie tussen RAM en FPS}\label{tbl:ramfps}
+\end{table}
 
-\section{Conclusie best scorend framework}
-Hierin komt de conclusie over het best scorend framework en waarom deze de best scorende is. Hierin zal ook rekening worden gehouden met de score van het vorige hoofdstuk!
+\begin{table}[]
+    \begin{tabular}{l|ll|l|l}
+        & Reserveerd   & Stijging reserveerd & Alloceerd   & Stijging alloceerd \\ \hline
+        Vuforia & -0.005773322 & 0.7445151           & -0.00729054 & 0.6988763          \\
+        ARCore  & -0.1287283   & 0.7155269           & -0.1315688  & 0.7157725         
+    \end{tabular}
+\caption{Correlatie tussen RAM en FPS drops}\label{tbl:ramdropfps}
+\end{table}
+
+\section{GameObjects}
+Ook het aantal gameobjects kon invloed hebben op FPS drops. Het interessante verschil tussen Vuforia en ARCore is de standaard methode waarop ze de virtuele objecten onthouden. Omdat bij Vuforia het object een kind is van het image target is deze sowieso aanwezig zelfs wanneer de afbeelding nog niet herkent is. Het aantal objecten is bij Vuforia constant, dit is makkelijk na te gaan door de standaardafwijking te berekenen die nul uitkomt wat wijst op geen afwijkingen. Om te objecten niet constant in te wereld te moeten tonen ze Vuforia hun renderer uit wanneer ze niet meer zichtbaar zijn. Het aantal zichtbare objecten (deze waarvan de renderer aanstaat) heeft helemaal geen (-0.006362351) invloed op het RAM.
+
+ARCore werkt op een volledige andere manier voor het bijhouden van de objecten. In de code van het standaard script staat er dat wanneer een nieuwe afbeelding wordt herkent er hiervoor een nieuw gameobject nodig is. Bij het verliezen van de tracking vernietigt het script dit object. Met deze manier van werken is het aantal actieve objecten dus niet constant. Op de grafiek van figuur \ref{fig:arcoreObjectCount} is er te zien dat de oude objecten niet verdwijnen uit het geheugen. Door het variabel aantal objecten is het mogelijk om de correlatie tussen aantal objecten en RAM-verbruik na te gaan. Er is inderdaad een positief (0.6887693) verband aanwezig. Om na te gaan of dit correct is, is het verband tussen de stijgingen in aantal objecten en stijgingen in RAM gecontroleerd wat ook een positief verband aantoont (0.6253159). 
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{arcoreObjectCount.png}
+    \caption{Verloop van het aantal objecten van ARCore bij experiment 4}
+    \label{fig:arcoreObjectCount}
+\end{figure}
+
+Het is wel belangrijk dat deze analyse is uitgevoerd op de standaard scripts en dat door aanpassingen aan deze scripts de resultaten positief of negatief zullen veranderen. De methode van Vuforia werkt ook, mits kleine aanpassingen, bij ARCore en vice-versa wat voor andere resultaten zal zorgen.
+
+\section{Constatering Voortreffelijkste Framework}
+De analyse van de FPS wijst erop dat Vuforia wel meer future proof is door nu al 60 FPS te ondersteunen tewijl ARCore maar maximum 30 FPS aankan. 
+Wel is het duidelijk dat de FPS van ARCore wel iets stabieler is dan de FPS van Vuforia zoals te zien op de grafieken in figuren \ref{fig:vuforiaTimeDrop} en \ref{fig:arcoreTimeDrop}. 
+Ook bij RAM-verbruik en RAM-stijgingen zien we dat ARCore beter scoort door alleen de objecten in te laden die momenteel herkent zijn. 
+Dit verband is belangrijk omdat, zoals bewezen, stijgingen in RAM een invloed hebben op de groote van de FPS drops.
+Een kleine stijging of een klein aantal stijgingen is hierbij dus belangrijk.
+
+Voor deze redenen is ARCore dus de winnaar van het experiment en is hiervoor een prototype gemaakt dat te zien is in hoofdstuk \ref{ch:prototype}.
