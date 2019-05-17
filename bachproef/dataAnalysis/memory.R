@@ -46,10 +46,10 @@ cor(x = vuforiaMerged$ReservedMemoryIncrease, vuforiaMerged$AllocatedMemoryIncre
 
 # Correlation Memory => Fps
 # Reserved Memory
-cor(x = arcoreMerged$ReservedMemory, arcoreMerged$Fps)
-cor(x = arcoreMerged$ReservedMemory, arcoreMerged$FpsDecrease)
-cor(x = arcoreMerged$ReservedMemoryIncrease, arcoreMerged$Fps)
-cor(x = arcoreMerged$ReservedMemoryIncrease, arcoreMerged$FpsDecrease)
+cor(x = vuforiaMerged$ReservedMemory, vuforiaMerged$Fps)
+cor(x = vuforiaMerged$ReservedMemory, vuforiaMerged$FpsDecrease)
+cor(x = vuforiaMerged$ReservedMemoryIncrease, vuforiaMerged$Fps)
+cor(x = vuforiaMerged$ReservedMemoryIncrease, vuforiaMerged$FpsDecrease)
 
 # Allocated Memory
 cor(x = vuforiaMerged$AllocatedMemory, vuforiaMerged$Fps)
@@ -91,7 +91,6 @@ cor(x = arcoreMerged$AllocatedMemory, arcoreMerged$Fps)
 cor(x = arcoreMerged$AllocatedMemory, arcoreMerged$FpsDecrease)
 cor(x= arcoreMerged$AllocatedMemoryIncrease, arcoreMerged$Fps)
 cor(x= arcoreMerged$AllocatedMemoryIncrease, arcoreMerged$FpsDecrease)
-cor(x = arcoreMerged$ReservedMemory, arcoreMerged$Fps)
 
 # Vuforia Vs ARCore memory
 
@@ -104,9 +103,13 @@ sd(vuforiaMerged$AllocatedMemory)
 sd(arcoreMerged$AllocatedMemory)
 mean(vuforiaMerged$AllocatedMemory)
 mean(arcoreMerged$AllocatedMemory)
-
+4559461 - 58679.57
+cor(vuforiaMerged$Time,vuforiaMerged$ReservedMemoryIncrease)
+min(vuforiaMerged$ReservedMemory)
+max(vuforiaMerged$ReservedMemory)
 # We can see that Vuforia uses more total RAM, we can also prove this by doing the t-test
 vuforiaMerged[, "Framework"] <- 0
 arcoreMerged[, "Framework"] <- 1
 frameworkMerged <- plyr::rbind.fill(vuforiaMerged, arcoreMerged)
 t.test(AllocatedMemory ~Framework, data=frameworkMerged, alternative="less")
+t.test(AllocatedMemoryIncrease ~Framework, data=frameworkMerged, alternative="less")
