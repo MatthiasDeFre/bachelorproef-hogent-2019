@@ -19,11 +19,11 @@ HMD kan over \acrshort{3dof} of \acrshort{6dof} beschikken afhankelijk van de ge
 % TODO CONTENT Iets over het beeld dat in 2 wordt gesplitst, op elke oog 1 beeld
 % TODO ASK Is uitleg over hoe het beeld op de ogen wordt geprojecteerd en geinterpreteerd door de hersenen teveel of topic?
 \subsection{Medische Klachten}\label{sec:medical}
-Sommige mensen kunnen bij het gebruik van een \acrshort{hmd} ziek of misselijk worden. De oorzaak van dit is meestal verbonden met een te klein of onnatuurlijk gezichtsveld, \acrfull{fov} (INSERT CITE) of als de beweging in de applicatie gebeurt a.h.v. teleportatie. (INSERT CITE) Deze teleportatie beweging komt vooral voor bij \acrshort{3dof} omdat hierbij de enigste manieren om de camera te bewegen teleportatie of met een joystick zijn wat onnatuurlijk aanvoelt.
+Sommige mensen kunnen bij het gebruik van een \acrshort{hmd} ziek of misselijk worden. De oorzaak van dit is meestal verbonden met een te klein of onnatuurlijk gezichtsveld, \acrfull{fov} \autocite{Lin2002} of als de beweging in de applicatie gebeurt a.h.v. teleportatie. Deze teleportatie beweging komt vooral voor bij \acrshort{3dof} omdat hierbij de enigste manieren om de camera te bewegen teleportatie of met een joystick zijn wat onnatuurlijk kan aanvoelen wanneer deze verkeerd zijn geimplementeerd \autocite{Frommel2017}.
 
 De tijd tussen de beweging in de echte wereld en de virtuele (latency) kan ook invloed hebben op virtual reality sickness indien deze te hoog is \autocite{Elbamby2018} en \autocite{DiZio2000}. 
-% TODO TRANSLATE disconnection
-Veel van deze problemen hebben te maken met de staat van de huidige hardware en hoe deze geen hogere FoV aan een hoge framerate kunnen ondersteunen. Een hoge en stabiele framerate is nodig om de gebruiker een aangename ervaring te geven. Een te lage framerate kan ervoor zorgen dat er (TRANSLATE) disconnection is tussen de beweging van de gebruiker en het gene dat effectief op het scherm gebeurt, dit kan voor frustratie zorgen.
+
+Veel van deze problemen hebben te maken met de staat van de huidige hardware en hoe deze geen hogere FoV aan een hoge framerate kunnen ondersteunen. Een hoge en stabiele framerate is nodig om de gebruiker een aangename ervaring te geven. Een te lage framerate kan ervoor zorgen dat er (TRANSLATE) disconnectie is tussen de beweging van de gebruiker en het gene dat effectief op het scherm gebeurt, dit kan voor frustratie zorgen.
 
 \subsection{Sensoren}
 % TODO ASK Extra uitleg over IMU of niet?
@@ -37,7 +37,7 @@ De gebruikte sensoren bij een \acrshort{hmd} hangen af van de gewenste beweginge
 
 \begin{figure}
     \includegraphics[width=\linewidth]{oculusSensor.jpg}
-    \caption{Oculus Rift Infraroodsensor, met drie van deze sensoren is het mogelijk om de gebruiker in een hele kamer te volgen}
+    \caption{Oculus Rift Infraroodsensor, met drie van deze sensoren is het mogelijk om de gebruiker in een hele kamer te volgen \autocite{Oculus2019}}
     \label{fig:oculusSensor}
 \end{figure}
 
@@ -48,11 +48,11 @@ Omdat de headset het beeld op de beide ogen projecteert heeft de gebruiker geen 
 % TODO CONTENT Iets over latency => tijd tussen beweging hoofd en beweging in vr
 % TODO CONTENT Teslasuit
 \subsection{Interactiviteit}
-De manier waarop de gebruiker zal interageren met de virtuele wereld zal afhangen van het aantal vrijheidsgraden, bij \acrshort{6dof} zal hij de mogelijkheid hebben om zelf te kunnen rondlopen in de wereld terwijl bij \acrshort{3dof} dit a.h.v. een joystick of via teleportatie zal moeten. Er is ook altijd de mogelijkheid om controllers te gebruiken. Deze controllers zullen dan fysieke interacties mogelijk maken, bijvoorbeeld het oppakken van een virtueel object of door op één van de knoppen van de controller te duwen een actie uit te voeren.
+De manier waarop de gebruiker zal interageren met de virtuele wereld zal afhangen van het aantal vrijheidsgraden, bij \acrshort{6dof} zal hij de mogelijkheid hebben om zelf te kunnen rondlopen in de wereld terwijl bij \acrshort{3dof} dit a.h.v. een joystick of via teleportatie zal moeten. Er is ook altijd de mogelijkheid om controllers te gebruiken. Deze controllers (zie figuur \ref{fig:htcvive}) zullen dan fysieke interacties mogelijk maken, bijvoorbeeld het oppakken van een virtueel object of door op één van de knoppen van de controller te duwen een actie uit te voeren.
 
 \begin{figure}
     \includegraphics[width=\linewidth]{headset.jpg}
-    \caption{HTC Vive headset en controllers}
+    \caption{HTC Vive headset en controllers \autocite{Telegraph2018}}
     \label{fig:htcvive}
 \end{figure}
 
@@ -67,21 +67,21 @@ Augmented reality kan het best worden omschreven als het plaatsen van virtuele o
 \subsection{Plane Detection}
 Om virtuele objecten in de echte wereld te kunnen plaatsen moet er eerst een mapping (zie figuur \ref{fig:pointcloudarkit}) beschikbaar zijn van de echte wereld. Dit gebeurt a.h.v. computer vision om zo te weten waar een nieuwe plane begint en eindigt. Dit algoritme zal constant lopen om zo nieuwe planes te kunnen ontdekken \autocite{Xu2018}. Het gebruikte algoritme zal een vorm zijn van odometry tracking.
 
-Eens een plane ontdekt is kan deze dienen als een platform om nieuwe objecten op te plaatsen. De applicatie zal dan het object verbinden aan een ankerpunt (INSERT CITE). Het object verbindt zich dan met dit ankerpunt die zijn locatie zal onthouden, zelfs als de gebruiker wat verder weg wandelt. Er zijn echter wel limieten aan dit anker, indien de gebruiker te ver weggaat van het punt en nadien terugkomt zal het virtuele object verplaatst zijn, dit begrip noemt drifting \autocite{You1999}. Indien er grote precisie nodig is voor de applicatie kan dit wel problemen zorgen.
+Eens een plane ontdekt is kan deze dienen als een platform om nieuwe objecten op te plaatsen. De applicatie zal dan het object verbinden aan een ankerpunt \autocite{ARCoreAnchor}. Het object verbindt zich dan met dit ankerpunt die zijn locatie zal onthouden, zelfs als de gebruiker wat verder weg wandelt. Er zijn echter wel limieten aan dit anker, indien de gebruiker te ver weggaat van het punt en nadien terugkomt zal het virtuele object verplaatst zijn, dit begrip noemt drifting \autocite{You1999}. Indien er grote precisie nodig is voor de applicatie kan dit wel problemen zorgen.
 
 \subsection{Odometry Tracking}
 
 Door gebruik te maken van de \acrshort{imu} en dus ook de gyroscope en accelerometers die in een smartphone zitten, heeft deze de mogelijkheid om vlakken te herkennen maar ook om zo achteraf terug te kunnen weten welke gebieden er al gescand zijn geweest. \autocite{Leutenegger2015}.
 
-De twee grote native AR frameworks maken hier beide gebruik van. De techniek die ARCore gebruikt heet 'concurrent odometry and mapping' (INSERT CITE GOOGLE) terwijl de gebruikte techniek van ARKit 'visual-inertial odometry' (INSERT CITE APPLE) is. 
+De twee grote native AR frameworks maken hier beide gebruik van. De techniek die ARCore gebruikt heet 'concurrent odometry and mapping' \autocite{ARCoreConcepts} terwijl de gebruikte techniek van ARKit 'visual-inertial odometry' \autocite{ARKitWorldTracking} is. 
 
-Beide technieken werken echter wel op dezelfde manier. Het algoritme combineert de motion data van de smartphone met de herkende features van het camerabeeld en berekent zo de verandering in positie. Hierdoor kunnen de juiste anchors en dus ook hun objecten worden getoond (INSERT CITE APPLE) (INSERT CITE GOOGLE).
+Beide technieken werken echter wel op dezelfde manier. Het algoritme combineert de motion data van de smartphone met de herkende features van het camerabeeld en berekent zo de verandering in positie. Hierdoor kunnen de juiste anchors en dus ook hun objecten worden getoond \autocite{ARCoreConcepts} \autocite{ARKitWorldTracking}.
 
 Een iets oudere vorm van odometry tracking is '\acrfull{slam}', deze zal ook gebruik maken van features maar is eerder gericht om een kaart bij te houden van de gemapte omgeving. Dit gebeurt door te weten wanneer een bepaalde gebied al ontdekt is en wanneer het dus niet nodig is om deze opnieuw toe te voegen aan de mapping (loop closure). Hierdoor zal \acrshort{slam} wel een beter globaal beeld hebben van de ruimte in tegenstelling tot odometry tracking. Deze is meer gericht op het behouden van het lokaal beeld zodat de objecten goed op hun plaats blijven \autocite{Yousif2015}. Dit is echter wel niet toepasbaar op elk framework omdat deze meestal een combinatie van de twee gebruiken of een eigen implementatie (zie figuur \ref{fig:voVSslam}).
 
 \begin{figure}
     \includegraphics[width=\linewidth]{pointcloudarkit.jpg}
-    \caption{ARKit Visual-Inertial Odometry, alle features van de mapping van een kamer gevisualiseerd in een point cloud waardoor er bepaalde vormen (planes) tevoorschijn komen zoals de sofa rechts}
+    \caption{ARKit Visual-Inertial Odometry, alle features van de mapping van een kamer gevisualiseerd in een point cloud waardoor er bepaalde vormen (planes) tevoorschijn komen zoals de sofa rechts \autocite{Voloshin2018}}
     \label{fig:pointcloudarkit}
 \end{figure}
 
@@ -92,7 +92,7 @@ Een iets oudere vorm van odometry tracking is '\acrfull{slam}', deze zal ook geb
 \end{figure}
 
 
-De kwaliteit van het camerabeeld zal een invloed hebben op de accuraatheid van het algoritme. Als er bijvoorbeeld te weinig licht is zal het algoritme de locatie niet kunnen herkennen. (INSERT CITE APPLE).
+De kwaliteit van het camerabeeld zal een invloed hebben op de accuraatheid van het algoritme. Als er bijvoorbeeld te weinig licht is zal het algoritme de locatie niet kunnen herkennen \autocite{ARKitImages}.
 
 % TODO CITE Object Anchor, alleen maar concrete implementaties gevonden ARCORE / ARKIT https://developers.google.com/ar/develop/developer-guides/anchors
 \subsection{Image Recognition}
@@ -101,18 +101,18 @@ Een tweede manier om virtuele objecten in de wereld te plaatsen is met image rec
 De image zal dienen als ankerpunt om de virtuele objecten op te plaatsen en te onthouden. 
 Nadat de image is herkend, is er de mogelijkheid om objecten erop te plaatsen. Wanneer de smartphone de afbeelding niet meer kan zien zal deze de positie van het object na een tijdje vergeten en zal tracking opnieuw stoppen. Het virtuele object verschijnt terug wanneer de smartphone de afbeelding weer herkent.
 
-Een alternatief van fotoherkenning is objectherkenning. In plaats van het herkennen van een 2D afbeelding wordt er hier een 3D object gebruikt (INSERT CITE VUFORIA).
+Een alternatief van fotoherkenning is objectherkenning. In plaats van het herkennen van een 2D afbeelding wordt er hier een 3D object gebruikt \autocite{VuforiaObject}.
 
 \begin{figure}
     \includegraphics[width=\linewidth]{vuforiaImageReg.png}
-    \caption{Aangeduide features op een afbeelding}
+    \caption{Aangeduide features op een afbeelding \autocite{VuforiaImageTracking}}
     \label{fig:imagereg}
 \end{figure}
 
 \subsection{Realisme}
 Omdat augmented reality geen besef heeft van aanpassingen in de wereld, bv een persoon die voor de camera loopt is het soms wel moeilijk om een immersieve ervaring te maken. Dit is vooral omdat de huidige hardware van een smartphone het niet aankan om constant op zoek te gaan naar kleine veranderingen terwijl een HoloLens (Mixed Reality) dit bijvoorbeeld wel kan.
 
-Er zijn wel nog extra technieken die frameworks kunnen gebruiken om toch nog wat extra immersie te creëren zoals light estimation. Hierbij kunnen virtuele objecten reageren wanneer de echte wereld lichter of donkerder wordt (INSERT CITE GOOGLE).
+Er zijn wel nog extra technieken die frameworks kunnen gebruiken om toch nog wat extra immersie te creëren zoals light estimation. Hierbij kunnen virtuele objecten reageren wanneer de echte wereld lichter of donkerder wordt \autocite{ARCoreConcepts}.
 
 \subsection{Interactiviteit}
 Het gebruik van een smartphone kan de interactiviteit van een applicatie verminderen omdat de gebruiker deze moet vasthouden en dus maar één hand vrij heeft. Door gebruik te maken van een augmented reality headset is dit probleem opgelost.
@@ -126,11 +126,11 @@ Het gebrek aan een kabel bij augmented reality zorgt er voor dat dit op vele pla
 
 Vele mensen die naar musea gaan hebben vaak hun smartphone bij, wat er dus voor zorgt dat de gebruiker alleen een app nodig heeft om mee te doen aan de ervaring.
 
-Image en object recognition is ook iets dat heel makkelijk te implementeren is in musea omdat bestaande kunstwerken kunnen dienen als objecten voor het weergeven van de virtuele content zoals te zien op figuure \ref{fig:imageReq} of zoals bij Artlens (zie hoofdstuk \ref{ch:cleveland})
+Image en object recognition is ook iets dat heel makkelijk te implementeren is in musea omdat bestaande kunstwerken kunnen dienen als objecten voor het weergeven van de virtuele content zoals te zien op figuur \ref{fig:imageReq} of zoals bij Artlens (zie hoofdstuk \ref{ch:cleveland})
 
 \begin{figure}
     \includegraphics[width=\linewidth]{imageReq.jpg}
-    \caption{Een schilderij dient als oppervlak om een virtueel object op te plaatsen}
+    \caption{Een schilderij dient als oppervlak om een virtueel object op te plaatsen \autocite{ARCO2017}}
     \label{fig:imageReq}
 \end{figure}
 
@@ -140,13 +140,13 @@ Image en object recognition is ook iets dat heel makkelijk te implementeren is i
 Om deze video's te bekijken is er eigenlijk niets speciaal nodig. Als een 360 graden video op een desktop wordt bekeken zal de camera nog altijd kunnen draaien door middel van de pijltjestoetsen. Op Terwijl wanneer deze op een apparaat met een \acrshort{imu} zal afspelen de camera zich zal omdraaien door het apparaat te bewegen. Wanneer er een IMU wordt gebruikt is er nog altijd een onderscheid tussen een \acrshort{hmd} en een gewoon apparaat. Als een \acrshort{hmd} aanwezig is zal de video worden getoond in VR. Bij een gewoon device zal de video echter een normale video zijn maar wel met de mogelijkheid om de camera te draaien.
 
 \subsection{Recording}
-Het opnemen van deze video is wel ingewikkelder. Er zijn twee formaten om een 360 graden video voor te stellen namelijk equirectangular (zie figuure \ref{fig:equirectangularprojection}) en cubic \autocite{Lee2010}. 
+Het opnemen van deze video is wel ingewikkelder. Er zijn twee formaten om een 360 graden video voor te stellen namelijk equirectangular (zie figuur \ref{fig:equirectangularprojection}) en cubic \autocite{Lee2010}. 
 
 Bij het equirectangular formaat zal deze elke frame van de video op een vlakke afbeelding projecteren. Deze afbeelding kan dan op een bol worden gelegd en deze bol zal de video voorstellen. Een makkelijke manier om een equirectangular afbeelding voor te stellen is namelijk een wereldkaart. Wanneer men een wereldkaart op een bol legt zal deze een wereldbol worden.
  
 \begin{figure}
     \includegraphics[width=\linewidth]{equirectangular.png}
-    \caption{Een equirectangular projectie van de wereld (wereldbol), het omvormen van een 2D afbeelding (wereldkaart) naar een 3D vorm (wereldbol)}
+    \caption{Een equirectangular projectie van de wereld (wereldbol), het omvormen van een 2D afbeelding (wereldkaart) naar een 3D vorm (wereldbol) \autocite{Brown2017}}
     \label{fig:equirectangularprojection}
 \end{figure}
 
@@ -172,7 +172,7 @@ Ook Mixed Reality zal gebruikmaken van een \acrshort{hmd}. Het grote verschil me
 Een mixed reality headset is ook uitgerust met verschillende sensoren om de positie binnen in de wereld te volgen. Door de combinatie van de mapping en sensoren is het dus niet nodig om extra sensoren te plaatsen om room-scale VR te te gebruiken.
 
 \subsection{Gestures}
-Sommige headsets ondersteunen ook het herkennen van bepaalde handbewegingen, met deze bewegingen, of gestures, kan de gebruiker dan bepaalde acties uitvoeren in de virtuele wereld. De ondersteunde gestures variëren echter wel van headset tot headset en hierdoor is het moeilijk om een applicatie te maken die op groot aantal verschillende headsets draait (INSERT CITE HOLOLENS / MAGIC LEAP GESTURES).
+Sommige headsets ondersteunen ook het herkennen van bepaalde handbewegingen, met deze bewegingen, of gestures, kan de gebruiker dan bepaalde acties uitvoeren in de virtuele wereld. De ondersteunde gestures variëren echter wel van headset tot headset en hierdoor is het moeilijk om een applicatie te maken die op groot aantal verschillende headsets draait \autocite{MicrosoftGestures}.
 
 % TODO Content gesture herkenning
 
@@ -181,7 +181,7 @@ Door gebruik te maken van de dieptecamera's die aanwezig zijn in de Mixed Realit
 
 \begin{figure}
     \includegraphics[width=\linewidth]{mesh.jpg}
-    \caption{Mesh (een virtuele voorstelling van een object bestaande uit driehoeken die met elkaar verbonden zijn) gemaakt door HoloLens spatial mapping algoritme}
+    \caption{Mesh (een virtuele voorstelling van een object bestaande uit driehoeken die met elkaar verbonden zijn) gemaakt door HoloLens spatial mapping algoritme \autocite{MicrosoftSpatial}}
     \label{fig:mesh}
 \end{figure}
 
