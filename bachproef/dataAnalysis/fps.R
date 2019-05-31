@@ -1,5 +1,6 @@
 library(tidyr)
 library(dplyr)
+
 library(ggplot2)
 library(plyr)
 # Script to check if both have stable fps
@@ -52,9 +53,9 @@ vuforiaMerged[vuforiaMerged$Fps < vuforiaFpsMean - 10, ]
 vuforiaMerged[vuforiaMerged$Fps < vuforiaFpsMean - 5 & vuforiaMerged$Fps >= vuforiaFpsMean - 10, ]
 
 # Plot all experiment to visualize the fps stability
-ggplot(vuforiaMerged, aes(x = Time, y = Fps)) + 
+ggplot(vuforiaMerged[vuforiaMerged$ExperimentNumber == "Experiment 5", ], aes(x = Time, y = Fps)) + 
   geom_line(aes(color = ExperimentNumber), size = 0.75) +
-  scale_color_manual(values = c("#00AFBB", "#E7B800", "#00ffff", "#42f465", "#d30c20")) +
+  scale_color_manual(values = c("#d30c20")) +
   theme_minimal()
 
 # ARCore
@@ -87,8 +88,8 @@ arcoreMerged[arcoreMerged$Fps < arcoreFpsMean - 10, ]
 arcoreMerged[arcoreMerged$Fps < arcoreFpsMean - 5 & arcoreMerged$Fps >= arcoreFpsMean - 10, ]
 
 # Plot all experiment to visualize the fps stability
-ggplot(arcoreMerged, aes(x = Time, y = Fps)) + 
+ggplot(arcoreMerged[arcoreMerged$ExperimentNumber == "Experiment 4", ], aes(x = Time, y = Fps)) + 
   geom_line(aes(color = ExperimentNumber), size = 0.75) +
-  scale_color_manual(values = c("#00AFBB", "#E7B800", "#00ffff", "#42f465", "#d30c20")) +
+  scale_color_manual(values = c("#42f465", "#d30c20")) +
   theme_minimal()
 

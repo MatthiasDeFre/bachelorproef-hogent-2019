@@ -11,6 +11,14 @@ Volgende extra features zijn opgesteld eens de meest passende technologie bekend
 De applicatie beschikt over de mogelijkheid om kunstwerken in te scannen en hierop digitale objecten te tonen. 
 Om er voor te zorgen dat gebruikers niet te veel gebonden zijn aan de chronologie van het levensverhaal kunnen ze er ook voor kiezen om zonder rondleiding rond te lopen in het museum en op deze manier de kunstwerken te scannen.
 
+Musea kunnen ook kiezen om een raadsel te verbinden aan een kunstwerk. Hierdoor kan de gebruik het kunstwerk alleen maar scannen indien hij het raadsel heeft opgelost. Op deze manier is er nog een extra vorm van interacties. Volgende lijst zijn voorbeelden van mogelijke raadsels: 
+
+\begin{enumerate}
+    \item Zoek een voorwerp in een kunstwerk
+    \item Scan kunstwerken X, Y... (op deze manier is het mogelijk om een meerdere schilderijen op dezelfde plaats in de tijdlijn te zetten)
+    \item Beantwoord een vraag
+\end{enumerate}
+
 Als extra moet er ook de mogelijkheid zijn om de virtuele objecten in de wereld te kunnen plaatsen, zonder het bijbehorend kunstwerk, door middel van plane detectie.
 
 \section{Requirements}
@@ -86,27 +94,38 @@ Ook voor gebruikers kan een browser wel handig zijn omdat ze dan geen applicatie
 Op het tijdstip van het schrijven van deze shortlist bezat 8th Wall Web niet de mogelijkheid om afbeeldingen te herkennen. Recent heeft deze echter wel een update ontvangen waardoor dit framework nu wel deze mogelijkheid heeft. Omdat de rest van het onderzoek al was opgesteld, wordt deze functionaliteit niet opgenomen in de berekening van de score.
 
 \subsection{Requirements}
-8th Wall Web heeft een score van 13/41. Deze lage score komt omdat deze momenteel niet beschikt over image herkenning wat de belangrijkste feature is van de applicatie.
-\begin{enumerate}
-    \item MUST +5 score
-    \begin{itemize}
-        \item Draaien op een groot aantal verschillende devices (door native support van Android en iOS)
-        \item Klikken op het scherm linken aan een actie 
-        \item Ondersteunen verschillende 3d object formaten
-    \end{itemize}
-    \item MUST NOT, geen
-    \item SHOULD +6 score
-    \begin{itemize}
-        \item Ondersteuning van plane detectie en het plaatsen van virtuele objecten hierop
-        \item Goede development documentatie
-    \end{itemize}
-    \item SHOULD NOT, geen
-    \item MAY +2 score
-    \begin{itemize}
-        \item Light estimation
-        \item Ondersteuning van browser
-    \end{itemize}
-\end{enumerate}
+8th Wall Web heeft een score van 13/41 (zie tabel \ref{tbl:8threq}). Deze lage score komt omdat deze momenteel niet beschikt over image herkenning wat de belangrijkste feature is van de applicatie.
+\begin{table}[]
+    \centering
+    \begin{tabular}{@{}lll@{}}
+        \toprule
+        \textit{Requirement}                       & \textit{Beschikt over}             & \textit{Score} \\ \midrule
+        \multicolumn{3}{c}{\textit{MUST}}                                                                \\ \midrule
+        Image herkenning                           & Nee                                & -5             \\
+        Multi device support                       & Ja (native support android en iOs) & +5             \\
+        Interactie (bv klikken) linken aan actie   & Ja                                 & +5             \\
+        Tonen informatie kunstwerk                 & Nee (geen image herkenning)        & -5             \\
+        Verschillende 3d object formaten           & Ja                                 & +5             \\ \midrule
+        \multicolumn{3}{c}{\textit{MUST NOT}}                                                            \\ \midrule
+        Verplichten hardware                       & Nee                                & 0              \\
+        Verplichten recentste versies van software & Nee                                & 0              \\ \midrule
+        \multicolumn{3}{c}{\textit{SHOULD}}                                                              \\ \midrule
+        Plane detectie en plaatsen van objecten    & Ja                                 & +3             \\
+        Object herkenning                          & Nee                                & 0              \\
+        Development documentatie                   & Ja                                 & +3              \\
+        Offline beschikbaar                        & Nee (verplicht browser)            & 0           \\ \midrule
+        \multicolumn{3}{c}{\textit{SHOULD NOT}}                                                          \\ \midrule
+        Hevige drifting                            & Nee                                & 0              \\ \midrule
+        \multicolumn{3}{c}{\textit{MAY}}                                                                 \\ \midrule
+        Light estimation                           & Ja                                 & +1             \\
+        Browser ondersteuning                      & Ja                                 & +1             \\
+        Virtuele buttons                           & Nee                                & 0              \\
+        Image tracking bij beweging van image      & Nee                                & 0              \\ \midrule
+        \textit{Totaal}                            & \multicolumn{1}{r}{}               & \textit{13}    \\ \bottomrule
+    \end{tabular}
+\caption{8th Wall Web: requirements en score}
+\label{tbl:8threq}
+\end{table}
 
 \section{ARCore}
 Het native AR framework voor Android, ontwikkeld door Google. Alhoewel dit framework speciaal gemaakt is voor Android biedt deze ook de mogelijkheid om apps te ontwikkelen voor iOS en zelfs voor een webbrowser \autocite{ARCoreOverview}. Omdat de webbrowser versie van ARCore alleen draait op Canary (de developer variant van Chrome) en ook hier nog eventjes zal blijven wordt deze niet verder besproken \autocite{ARCoreWeb}.
@@ -120,7 +139,7 @@ Niet alleen de lichtinval van de objecten kan worden aangepast, de virtuele obje
 
 \begin{figure}
     \includegraphics[width=\linewidth]{arcoreLightEstimation.png}
-    \caption{Een virtueel object reageert anders afhankelijk van het lichtniveau}
+    \caption{Een virtueel object reageert anders afhankelijk van het lichtniveau \autocite{UnityLight}}
     \label{fig:arcoreLightEstimation}
 \end{figure}
 
@@ -133,30 +152,38 @@ Het hosten van deze data gebeurt door een Firebase databank die aan elk punt een
 
 % TODO TRANSLATE relative => De relatieve positie van dit punt naar verhouding van... ? ASK!
 \subsection{Requirements}
-ARCore heeft een score van 36/41 door vooral goed te scoren op de MUST voorwaarden. Alhoewel ARCore misschien niet beschikt over een uitgebreide implementatie van deze voorwaarden is het vooral belangrijk dat ze aanwezig zijn binnen het framework.
-\begin{enumerate}
-    \item MUST +25 score
-    \begin{itemize}
-       \item Ondersteuning van image herkenning
-       \item Draaien op een groot aantal verschillende devices (door native support van Android en iOS)
-       \item Klikken op het scherm linken aan een actie 
-       \item Tonen van informatie over het kunstwerk
-       \item Ondersteunen verschillende 3d object formaten
-    \end{itemize}
-    \item MUST NOT, geen
-    \item SHOULD +9 score
-    \begin{itemize}
-    \item Ondersteuning van plane detectie en het plaatsen van virtuele objecten hierop
-    \item Goede development documentatie
-    \item Offline beschikbaar zijn
-    \end{itemize}
-    \item SHOULD NOT, geen
-    \item MAY +2 score
-    \begin{itemize}
-        \item Light estimation
-        \item Images blijven tracking
-    \end{itemize}
-\end{enumerate}
+ARCore heeft een score van 36/41 (zie tabel \ref{tbl:arcorereq}) door vooral goed te scoren op de MUST voorwaarden. Alhoewel ARCore misschien niet beschikt over een uitgebreide implementatie van deze voorwaarden is het vooral belangrijk dat ze aanwezig zijn binnen het framework.
+\begin{table}[]
+    \centering
+    \begin{tabular}{@{}lll@{}}
+        \toprule
+        \textit{Requirement}                       & \textit{Beschikt over}             & \textit{Score} \\ \midrule
+        \multicolumn{3}{c}{\textit{MUST}}                                                                \\ \midrule
+        Image herkenning                           & Ja                                 & +5             \\
+        Multi device support                       & Ja (native support android en iOs) & +5             \\
+        Interactie (bv klikken) linken aan actie   & Ja                                 & +5             \\
+        Tonen informatie kunstwerk                 & Ja                                 & +5             \\
+        Verschillende 3d object formaten           & Ja                                 & +5             \\ \midrule
+        \multicolumn{3}{c}{\textit{MUST NOT}}                                                            \\ \midrule
+        Verplichten hardware                       & Nee                                & 0              \\
+        Verplichten recentste versies van software & Nee                                & 0              \\ \midrule
+        \multicolumn{3}{c}{\textit{SHOULD}}                                                              \\ \midrule
+        Plane detectie en plaatsen van objecten    & Ja                                 & +3             \\
+        Object herkenning                          & Nee                                & 0              \\
+        Development documentatie                   & Ja                                 & +3             \\
+        Offline beschikbaar                        & Ja                                 & +3             \\ \midrule
+        \multicolumn{3}{c}{\textit{SHOULD NOT}}                                                          \\ \midrule
+        Hevige drifting                            & Nee                                & 0              \\ \midrule
+        \multicolumn{3}{c}{\textit{MAY}}                                                                 \\ \midrule
+        Light estimation                           & Ja                                 & +1             \\
+        Browser ondersteuning                      & Ja                                 & +1             \\
+        Virtuele buttons                           & Nee                                & 0              \\
+        Image tracking bij beweging van image      & Nee                                & 0              \\ \midrule
+        \textit{Totaal}                            & \multicolumn{1}{r}{}               & \textit{36}    \\ \bottomrule
+    \end{tabular}
+    \caption{ARCore: requirements en score}
+    \label{tbl:arcorereq}
+\end{table}
 
 \section{ARKit}
 ARKit is de native technologie voor iOS, in tegenstelling tot ARCore kan men met dit framework alleen maar iOS applicaties ontwikkelen.
@@ -178,31 +205,38 @@ Hoewel er geen server nodig is kan het soms wel handig zijn dat een apparaat als
 Nog een groot verschil met ARCore is dat bij ARCore alleen de locatie en feature points van de ankerpunten worden teruggestuurd terwijl ARKit de hele mapping data verstuurt. Het versturen van deze data kan heel wat bandbreedte opnemen dus kunnen er problemen optreden indien er veel apparaten zijn die met dezelfde sessie willen verbinden \autocite{ARKitMultiuser}.
 
 \subsection{Requirements}
-ARKit heeft een score 29/41 omdat dit framework alleen maar draait op iOS devices. Dit zorgt ervoor dat de requirement 'Draaien op een groot aantal devices' geschonden is waardoor de score met 5 vermindert wordt.
-\begin{enumerate}
-    \item MUST +15 score
-    \begin{itemize}
-        \item Ondersteuning van image herkenning
-        \item Klikken op het scherm linken aan een actie 
-        \item Tonen van informatie over het kunstwerk
-        \item Ondersteunen verschillende 3d object formaten
-        \item Ontbreken support groot aantal devices, score -5
-    \end{itemize}
-    \item MUST NOT, geen
-    \item SHOULD +12 score
-    \begin{itemize}
-        \item Ondersteuning van plane detectie en het plaatsen van virtuele objecten hierop
-        \item Ondersteuning van object herkenning (alleen bij ARKit 2.0)
-        \item Goede development documentatie
-        \item Offline beschikbaar zijn
-    \end{itemize}
-    \item SHOULD NOT, geen
-    \item MAY +2 score
-    \begin{itemize}
-        \item Light estimation
-        \item Images blijven tracking
-    \end{itemize}
-\end{enumerate}
+ARKit heeft een score 29/41 (zie tabel \ref{tbl:arkitreq}) omdat dit framework alleen maar draait op iOS devices. Dit zorgt ervoor dat de requirement 'Draaien op een groot aantal devices' geschonden is waardoor de score met 5 vermindert wordt.
+\begin{table}[]
+    \centering
+    \begin{tabular}{@{}lll@{}}
+        \toprule
+        \textit{Requirement}                       & \textit{Beschikt over} & \textit{Score} \\ \midrule
+        \multicolumn{3}{c}{\textit{MUST}}                                                    \\ \midrule
+        Image herkenning                           & Ja                     & +5             \\
+        Multi device support                       & Nee (alleen iOS        & -5             \\
+        Interactie (bv klikken) linken aan actie   & Ja                     & +5             \\
+        Tonen informatie kunstwerk                 & Ja                     & +5             \\
+        Verschillende 3d object formaten           & Ja                     & +5             \\ \midrule
+        \multicolumn{3}{c}{\textit{MUST NOT}}                                                \\ \midrule
+        Verplichten hardware                       & Nee                    & 0              \\
+        Verplichten recentste versies van software & Nee                    & 0              \\ \midrule
+        \multicolumn{3}{c}{\textit{SHOULD}}                                                  \\ \midrule
+        Plane detectie en plaatsen van objecten    & Ja                     & +3             \\
+        Object herkenning                          & Ja  (alleen ARKit 2.0)                     & +3             \\
+        Development documentatie                   & Ja                     & +3             \\
+        Offline beschikbaar                        & Ja                     & +3             \\ \midrule
+        \multicolumn{3}{c}{\textit{SHOULD NOT}}                                              \\ \midrule
+        Hevige drifting                            & Nee                    & 0              \\ \midrule
+        \multicolumn{3}{c}{\textit{MAY}}                                                     \\ \midrule
+        Light estimation                           & Ja                     & +1             \\
+        Browser ondersteuning                      & Nee                     & 0             \\
+        Virtuele buttons                           & Nee                    & 0              \\
+        Image tracking bij beweging van image      & Ja                     & +1             \\ \midrule
+        \textit{Totaal}                            & \multicolumn{1}{r}{}   & \textit{29}    \\ \bottomrule
+    \end{tabular}
+    \caption{ARKit: requirements en score}
+    \label{tbl:arkitreq}
+\end{table}
 
 \section{Vuforia}
 Net zoals 8th Wall en ARCore biedt Vuforia de mogelijkheid om native applicaties te ontwikkelen voor Android en iOS. Vele andere frameworks ondersteunen ook het herkennen van images en sommige zelfs objecten maar geen enkel ander framework focust zich hier evenveel op als Vuforia.  
@@ -213,7 +247,7 @@ Ontwikkeling van Vuforia applicaties kan gebeuren in de native development omgev
 Het unieke aan Vuforia is de manier waarop deze \acrshort{slam} implementeert. Vuforia zal zoveel mogelijk proberen gebruik te maken van de native mapping algoritmen (ARKit, ARCore en MR). Hierdoor kan deze gebruikmaken van alle features die deze native technologieën bevatten alsook nog zijn eigen functionaliteiten hieraan toevoegen. Op deze manier ondersteunt Vuforia direct alle apparaten die gebruikmaken van ARKit, ARCore en MR. Voor apparaten die niet ondersteunt zijn door deze frameworks is er VISLAM en \acrshort{slam}. Hierdoor is er ook ondersteuning voor oudere apparaten die ARKit of ARCore niet ondersteunen \autocite{VuforiaFusion}.
 \begin{figure}
     \includegraphics[width=\linewidth]{vuforiaFusion.png}
-    \caption{Vuforia Fusion}
+    \caption{Vuforia Fusion \autocite{VuforiaFusion}}
     \label{fig:vuforiaFusion}
 \end{figure}
 
@@ -235,40 +269,54 @@ Vuforia bied vijf soorten herkenning aan, deze worden hieronder kort uitgelegd w
 
 \begin{figure}
     \includegraphics[width=\linewidth]{vumarks.png}
-    \caption{Opbouw van een VuMark, de developer kan kiezen hoe deze eruit ziet zolang de contour (vorm), border en clear space aanwezig zijn. Vuforia gebruikt de code elements om data te encoderen}
+    \caption{Opbouw van een VuMark, de developer kan kiezen hoe deze eruit ziet zolang de contour (vorm), border en clear space aanwezig zijn. Vuforia gebruikt de code elements om data te encoderen \autocite{VuforiaMark}}
     \label{fig:vumarks}
 \end{figure}
 
 \subsection{Requirements}
-Vuforia heeft een score 37/41 door zijn grote focus op de benodige requirements alsook de nice-to-haves. Door zijn multiplatform (Android en ioS) support in combinatie met eigen features krijgt deze een hoge score. Echter bij het testen van dit framework is het wel gebleken dat er zich hevige drifting voordoet wanneer de plane detection functie wordt gebruikt. Dit voorval heeft een kleine negatieve invloed op de score van Vuforia.
-\begin{enumerate}
-    \item MUST +25 score
-    \begin{itemize}
-        \item Ondersteuning van image herkenning
-        \item Draaien op een groot aantal verschillende devices (door native support van Android en iOS)
-        \item Klikken op het scherm linken aan een actie 
-        \item Tonen van informatie over het kunstwerk
-        \item Ondersteunen verschillende 3d object formaten
-    \end{itemize}
-    \item MUST NOT, geen
-    \item SHOULD +12 score
-    \begin{itemize}
-        \item Ondersteuning van plane detectie en het plaatsen van virtuele objecten hierop
-        \item Ondersteuning van object herkenning
-        \item Goede development documentatie
-        \item Offline beschikbaar zijn
-    \end{itemize}
-    \item SHOULD NOT -3 score
-    \begin{itemize}
-        \item Hevige drifting
-    \end{itemize}
-    \item MAY +3 score
-    \begin{itemize}
-        \item Light estimation (momenteel alleen bij ARKit)
-        \item Virtuele buttons
-        \item Images blijven tracking
-    \end{itemize}
-\end{enumerate}
+Vuforia heeft een score 37/41 (zie tabel \ref{tbl:vuforiareq}) door zijn grote focus op de benodige requirements alsook de nice-to-haves. Door zijn multiplatform (Android en ioS) support in combinatie met eigen features krijgt deze een hoge score. Echter bij het testen van dit framework is het wel gebleken dat er zich hevige drifting voordoet wanneer de plane detection functie wordt gebruikt. Dit voorval heeft een kleine negatieve invloed op de score van Vuforia.
+\begin{table}[]
+    \centering
+    \begin{tabular}{@{}lll@{}}
+        \toprule
+        \textit{Requirement}                       & \textit{Beschikt over}                        & \textit{Score} \\ \midrule
+        \multicolumn{3}{c}{\textit{MUST}}                                                                           \\ \midrule
+        Image herkenning                           & Ja                                            & +5             \\
+        Multi device support                       & Ja (door native ondersteuning Android en iOS) & +5             \\
+        Interactie (bv klikken) linken aan actie   & Ja                                            & +5             \\
+        Tonen informatie kunstwerk                 & Ja                                            & +5             \\
+        Verschillende 3d object formaten           & Ja                                            & +5             \\ \midrule
+        \multicolumn{3}{c}{\textit{MUST NOT}}                                                                       \\ \midrule
+        Verplichten hardware                       & Nee                                           & 0              \\
+        Verplichten recentste versies van software & Nee                                           & 0              \\ \midrule
+        \multicolumn{3}{c}{\textit{SHOULD}}                                                                         \\ \midrule
+        Plane detectie en plaatsen van objecten    & Ja                                            & +3             \\
+        Object herkenning                          & Ja                                            & +3             \\
+        Development documentatie                   & Ja                                            & +3             \\
+        Offline beschikbaar                        & Ja                                            & +3             \\ \midrule
+        \multicolumn{3}{c}{\textit{SHOULD NOT}}                                                                     \\ \midrule
+        Hevige drifting                            & Ja                                            & -3             \\ \midrule
+        \multicolumn{3}{c}{\textit{MAY}}                                                                            \\ \midrule
+        Light estimation                           & Ja                                            & +1             \\
+        Browser ondersteuning                      & Nee                                           & 0              \\
+        Virtuele buttons                           & Ja                                            & +1             \\
+        Image tracking bij beweging van image      & Ja                                            & +1             \\ \midrule
+        \textit{Totaal}                            & \multicolumn{1}{r}{}                          & \textit{37}    \\ \bottomrule
+    \end{tabular}
+    \caption{Vuforia: requirements en score}
+    \label{tbl:vuforiareq}
+\end{table}
 
 \section{Conclusie Shortlist}
-Uit deze shortlist blijkt dat ARCore en Vuforia de twee hoogste scorende frameworks zijn. Dit betekent echter niet dat deze de beste frameworks zijn, maar eerder dat deze minstens over alle nodige basisfunctionaliteiten van de applicatie beschikken. Deze twee frameworks worden nu verder met elkaar vergeleken in het experiment waarbij zal worden getest hoe goed zijn deze functionaliteiten implementeren alsook hoe goed hun performance is.
+Uit deze shortlist blijkt dat ARCore en Vuforia de twee hoogste scorende frameworks zijn (zie table \ref{tbl:arscore}). Dit betekent echter niet dat deze de beste frameworks zijn, maar eerder dat deze minstens over alle nodige basisfunctionaliteiten van de applicatie beschikken. Deze twee frameworks worden nu verder met elkaar vergeleken in het experiment waarbij zal worden getest hoe goed zijn deze functionaliteiten implementeren alsook hoe goed hun performance is.
+\begin{table}[]
+    \centering
+    \begin{tabular}{@{}lllll@{}}
+        \toprule
+        \textit{Frameworks} & \textit{8th Wall Web} & \textit{ARCore} & \textit{ARKit} & \textit{Vuforia}       \\ \midrule
+        \textit{Score}      & 13                    & 36              & 29             & 37                     \\
+        \textit{Reden}      & Geen image herkenning & Gemiddeld goed  & Alleen iOS     & Focus image herkenning \\ \bottomrule
+    \end{tabular}
+    \caption{Scores AR frameworks, Vuforia en ARCore scoren het hoogst}
+    \label{tbl:arscore}
+\end{table}

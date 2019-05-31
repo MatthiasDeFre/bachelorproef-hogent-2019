@@ -1,4 +1,4 @@
-\chapter{Longlist AR / VR technologieën}
+\chapter{Longlist XR technologieën}
 \label{ch:longlist}
 
 Hierin worden de verschillende technologieën overlopen die kunnen gebruikt worden om deze use case te volbrengen.
@@ -10,12 +10,18 @@ Elke sectie bevat de belangrijkste zaken in verband met de technologie waaronder
     \item Bruikbaarheid
 \end{itemize}
 
-Het chronologisch verhaal van een stad, tijdsperiode of een persoon is eigenlijk gelijkaardig. Bij al van deze verhalen zal er altijd iemand zijn die kiest wat er juist wordt verteld en wat niet. Het is dus ook voor deze reden dat het heel moeilijk is om bruikbaarheid concreet toe te passen op alleen het levensverhaal vertellen. Daarom is er gekozen om eerder in de ruime context van musea te denken en pas later bij de shortlist een concrete implementatie over het levensverhaal te bedenken. 
+Het chronologisch verhaal van een stad, tijdsperiode of een persoon is eigenlijk gelijkaardig. Bij al deze verhalen zal er altijd iemand zijn die kiest wat er juist wordt verteld en wat niet. Het is dus ook voor deze reden dat het heel moeilijk is om bruikbaarheid concreet toe te passen op alleen het levensverhaal vertellen. Daarom is er gekozen om eerder in de ruime context van musea te denken en pas later bij de shortlist een concrete implementatie over het levensverhaal te bedenken. 
 
 \section{Head Mounted Virtual Reality}
 Head mounted virtual reality maakt gebruik van een \acrshort{hmd} die de gebruiker op zijn hoofd zet. Deze headset zal dan een virtuele wereld tonen die volledig aangestuurd is door de applicatie zelf. Deze wereld zal dus geen rekening houden met de echte wereld, dit kan hierdoor wel voor problemen zorgen indien er geen sensor of camera aanwezig is die je tegenhoudt om tegen muren te lopen.
 
 HMD kan over \acrshort{3dof} of \acrshort{6dof} beschikken afhankelijk van de gebruikte headset. De 3DOF headsets zijn wel goedkoper dan de \acrshort{6dof} en maken vaak gebruik van de smartphone om zo het beeld te kunnen tonen. 
+
+Er zijn twee soorten \acrshort{hmd}:
+\begin{enumerate}
+    \item Standalone: doet alle berekeningen en tracking zelf.
+    \item Thethered: maakt gebruik van een ander krachtig apparaat zoals een pc of spelconsole om de berekeningen en tracking te helpen uitvoeren.
+\end{enumerate}
 % TODO CONTENT Iets over het beeld dat in 2 wordt gesplitst, op elke oog 1 beeld
 % TODO ASK Is uitleg over hoe het beeld op de ogen wordt geprojecteerd en geinterpreteerd door de hersenen teveel of topic?
 \subsection{Medische Klachten}\label{sec:medical}
@@ -23,11 +29,11 @@ Sommige mensen kunnen bij het gebruik van een \acrshort{hmd} ziek of misselijk w
 
 De tijd tussen de beweging in de echte wereld en de virtuele (latency) kan ook invloed hebben op virtual reality sickness indien deze te hoog is \autocite{Elbamby2018} en \autocite{DiZio2000}. 
 
-Veel van deze problemen hebben te maken met de staat van de huidige hardware en hoe deze geen hogere FoV aan een hoge framerate kunnen ondersteunen. Een hoge en stabiele framerate is nodig om de gebruiker een aangename ervaring te geven. Een te lage framerate kan ervoor zorgen dat er (TRANSLATE) disconnectie is tussen de beweging van de gebruiker en het gene dat effectief op het scherm gebeurt, dit kan voor frustratie zorgen.
+Veel van deze problemen hebben te maken met de staat van de huidige hardware en hoe deze geen hogere FoV aan een hoge framerate kunnen ondersteunen. Een hoge en stabiele framerate is nodig om de gebruiker een aangename ervaring te geven. Een te lage framerate kan ervoor zorgen dat er disconnectie is tussen de beweging van de gebruiker en het gene dat effectief op het scherm gebeurt, dit kan voor frustratie zorgen.
 
 \subsection{Sensoren}
 % TODO ASK Extra uitleg over IMU of niet?
-De gebruikte sensoren bij een \acrshort{hmd} hangen af van de gewenste bewegingen. Als er alleen maar rotationale bewegingen nodig zijn zal een gyroscoop of een \acrfull{imu} (bij standalone headsets, zie figuur \ref{fig:imu}) genoeg zijn om zo de yaw, pitch, roll te kunnen meten en hierop te kunnen reageren \autocite{LaValle2014}. Indien er ook positionale bewegingen nodig zijn zal de kamer wel moeten beschikken over infraroodsensoren (zie figuur \ref{fig:oculusSensor}) om zo de headset goed te kunnen tracken. Deze sensoren zorgen er wel voor dat er meer voorbereiding nodig is alvorens het gebruik van de headset.
+De gebruikte sensoren bij een \acrshort{hmd} hangen af van de gewenste bewegingen. Als er alleen maar rotationale bewegingen nodig zijn zal een gyroscoop of een \acrfull{imu} (bij standalone headsets, zie figuur \ref{fig:imu}) genoeg zijn om zo de yaw, pitch, roll te kunnen meten en hierop te kunnen reageren \autocite{LaValle2014}. Indien er ook positionale bewegingen nodig zijn zal de kamer wel (vaak) moeten beschikken over infraroodsensoren (zie figuur \ref{fig:oculusSensor}) om zo de headset goed te kunnen tracken. Deze sensoren zorgen er wel voor dat er meer voorbereiding nodig is alvorens het gebruik van de headset. Sommige \acrfull{6dof} headsets kunnen wel positionale bewegingen uitvoeren zonder externe sensoren door middel van inside-out tracking. In tegenstelling tot bij outside-in tracking met sensoren zal hier de headset de beweging van de camera berekenen aan de hand van features die hij ontdekt met een camera die gemonteerd is op het apparaat en/of door gebruik te maken van een \acrshort{imu} \autocite{Ribo2001}.
 
 \begin{figure}
     \includegraphics[width=\linewidth]{imu.jpg}
@@ -135,7 +141,7 @@ Image en object recognition is ook iets dat heel makkelijk te implementeren is i
 \end{figure}
 
 \section{360 Degrees Videos}
-360 Degrees Videos is de eenvoudigste vorm van virtual reality in deze longlist. Eigenlijk zijn dit gewoon videos waarbij de gebruiker de camera 360 graden kan draaien \autocite{Hosseini2016}.
+360 Degrees Videos is de eenvoudigste vorm van \acrlong{xr} in deze longlist. Eigenlijk zijn dit gewoon video's waarbij de gebruiker de camera 360 graden kan draaien \autocite{Hosseini2016}.
 
 Om deze video's te bekijken is er eigenlijk niets speciaal nodig. Als een 360 graden video op een desktop wordt bekeken zal de camera nog altijd kunnen draaien door middel van de pijltjestoetsen. Op Terwijl wanneer deze op een apparaat met een \acrshort{imu} zal afspelen de camera zich zal omdraaien door het apparaat te bewegen. Wanneer er een IMU wordt gebruikt is er nog altijd een onderscheid tussen een \acrshort{hmd} en een gewoon apparaat. Als een \acrshort{hmd} aanwezig is zal de video worden getoond in VR. Bij een gewoon device zal de video echter een normale video zijn maar wel met de mogelijkheid om de camera te draaien.
 
@@ -188,7 +194,7 @@ Door gebruik te maken van de dieptecamera's die aanwezig zijn in de Mixed Realit
 Zoals te zien op figuur \ref{fig:mesh} bevat de mesh redelijk veel detail over de ruimte, deze mesh is wel niet honderd procent accuraat waardoor het moeilijk is om kleine details uit de mesh te halen. \autocite{Evans2017}.
 
 \subsection{Realisme}
-Mixed reality is één van de meest realistische VR technologieën omdat deze de kracht van augmented en virtual reality bevat. Het is mogelijk om virtuele objecten in de echte wereld te plaatsen en om hier ook fysiek mee te interageren. Een extra vorm van realisme komt door het gebruik van occlusion. Dit is wanneer een virtueel object wordt geblokkeerd door een ander virtueel of zelfs fysiek object. Op deze manier zal de gebruiker nog meer het gevoel krijgen dat de virtuele wereld deel uit maakt van de echte \autocite{Evans2017}.
+Mixed reality is één van de meest realistische \acrshort{xr} technologieën omdat deze de kracht van augmented en virtual reality bevat. Het is mogelijk om virtuele objecten in de echte wereld te plaatsen en om hier ook fysiek mee te interageren. Een extra vorm van realisme komt door het gebruik van occlusion. Dit is wanneer een virtueel object wordt geblokkeerd door een ander virtueel of zelfs fysiek object. Op deze manier zal de gebruiker nog meer het gevoel krijgen dat de virtuele wereld deel uit maakt van de echte \autocite{Evans2017}.
 
 \subsection{Interactiviteit}
 In tegenstelling tot augmented reality zal mixed reality wel rekening houden met de fysieke wereld. Op deze manier kan de gebruiker zijn handen gebruiken om met de virtuele wereld te communiceren. Hierdoor zijn er veel verschillende mogelijkheden om dit in een applicatie te implementeren.

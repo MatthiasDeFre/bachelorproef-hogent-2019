@@ -5,7 +5,7 @@
 \chapter{Methodologie van het Experiment}
 \label{ch:methodologie}
 
-Om de kwaliteit van een augmented reality framework te beoordelen is het experiment in twee delen opgedeeld. Het eerste deel van het experiment gaat over hoe goed de frameworks de core van de applicatie kunnen implementeren. Elk framework krijgt dezelfde lijst met vijftien verschillende afbeeldingen. De bedoeling is dat elk framework zoveel mogelijk images probeert te herkennen. De gebruikte lijst met images kan u vinden in de bijlage. De lijst is opgebouwd uit afbeeldingen met een verschillende moeilijkheidsgraad. Om te weten wat een moeilijke of makkelijke afbeelding is gebruikt deze studie volgende criteria.
+Om de kwaliteit van een augmented reality framework te beoordelen is het experiment in twee delen opgedeeld. Het eerste deel van het experiment gaat over hoe goed de frameworks de core van de applicatie kunnen implementeren. Elk framework krijgt dezelfde lijst met vijftien verschillende afbeeldingen (te vinden op de \href{https://github.com/MatthiasDeFre/bachelorproef-hogent-2019}{repository van deze studie} \autocite{GITHUBMDF}). De bedoeling is dat elk framework zoveel mogelijk images probeert te herkennen. De gebruikte lijst met images kan u vinden in de bijlage. De lijst is opgebouwd uit afbeeldingen met een verschillende moeilijkheidsgraad. Om te weten wat een moeilijke of makkelijke afbeelding is gebruikt deze studie volgende criteria.
 
 \begin{itemize}
     \item Veel features
@@ -42,11 +42,22 @@ De standaard manier om een virtueel object te tonen is aan de hand van een gameo
 
 Een gameobject moet niet altijd een fysieke vorm hebben, een leeg gameobject kan ook bestaan. Dit object kan dan nog steeds gebruikmaken van de lifecycle methoden. De profiler is hier een voorbeeld van.
 
+\subsection{Prefab}
+Sommige gameobjects komen vaak voor in een applicatie. Een developer kan deze gameobjects opslaan door ze te slepen vanuit het editor venster naar de assets folder. Hierdoor verandert het object in een prefab en is het herbruikbaar in verschillende scene's en scripts. Het grootste voordeel hiervan is dat aanpassingen aan de prefab ook de gameobjects in de scene's en scripts aanpassen.
+
 \subsection{Canvas}
 Het canvas bevat alle UI elementen zoals text, images en buttons.
 
 \subsection{Camera}
 De camera bepaalt welke delen van de scene getoond worden. Om de performance van applicaties met een groot aantal objecten te verbeteren maakt Unity gebruik van Occlusion en Frustum Culling om alleen objecten te tonen die zich in het gezichtsveld van de camera bevinden \autocite{UnityCulling}.
+
+Het frustum is het gezichtsveld van een camera. Bij Frustum Culling zullen dus alle objecten buiten het gezichtsveld onzichtbaar zijn. Occlusion gaat nog een stap verder en zal ook alle objecten die verstopt zijn achter een ander object op onzichtbaar zetten (zie figuur \ref{fig:culling}).
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{culling.png}
+    \caption{Frustum culling zonder (links) en met (rechts) occlusion \autocite{UnityCulling}}
+    \label{fig:culling}
+\end{figure}
 
 \subsection{Cube Touch}
 Om geen grote externe invloed te hebben op beide applicaties delen deze hetzelfde virtuele object dat de applicatie toont bij de herkenning van de afbeelding. Dit object bevat een custom script dat detecteert wanneer de gebruiker op de kubus duwt via het smartphone scherm en zal deze van kleur veranderen.
@@ -100,7 +111,21 @@ Er is de mogelijkheid om voor al van deze scripts een eigen script te schrijven.
 
 Om een virtueel object te binden aan de Image Target zijn er verschillende mogelijkheden. De standaard optie die Vuforia zelf aanraad op zijn site is om het object een kind te maken van het target. Op deze manier zal het DefaultTrackingBehaviour script, of scripts die hiervan overerven, de render-, collider- en canvas componenten van het object activeren bij de start van de tracking of deactiveren wanneer de tracking verloren gaat.
 
+\section{Test Setup}
+Indien u het experiment exact wilt repliceren moet u beschikken over de volgende zaken:
 
+\begin{enumerate}
+    \item OnePlus 6T, 128GB, 8GB RAM
+    \item Android Versie: 9
+    \item OxygenOS Versie: 9.0.13
+\end{enumerate}
+
+De gebruikte ruimte kan u zien op figuur \ref{fig:testSetup}. Alle experimenten zijn achterelkaar uitgevoerd waarbij eerst de vijf Vuforia experimenten en erna de vijf ARCore experimenten.
+\begin{figure}
+    \includegraphics[width=\linewidth]{testSetup.jpg}
+    \caption{De ruimte waarin het experiment is uitgevoerd}
+    \label{fig:testSetup}
+\end{figure}
 %% TODO: Hoe ben je te werk gegaan? Verdeel je onderzoek in grote fasen, en
 %% licht in elke fase toe welke stappen je gevolgd hebt. Verantwoord waarom je
 %% op deze manier te werk gegaan bent. Je moet kunnen aantonen dat je de best

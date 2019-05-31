@@ -43,40 +43,42 @@ De grote van de FPS drops hebben een grotere impact op de ervaring dan de freque
 
 De oorsprong van de FPS drops bij Vuforia is makkelijk te achterhalen door naar het tijdstip te kijken wanneer ze voorkomen (zie tabel \ref{tbl:vuforiadrop}). In deze tabel is duidelijk te zien dat de drops altijd voorkomen bij het opstarten van de applicatie.
 
-\begin{table}[]
-    \begin{tabular}{@{}l|l|l|l|l|l@{}}
-        & Drop 1   & Drop 2   & Drop 3   & Drop 4   & Drop 5   \\ \midrule
+\begin{table}
+    \centering
+    \begin{tabular}{llllll}\toprule
+        & \textit{Drop 1}   & \textit{Drop 2}   & \textit{Drop 3}   & \textit{Drop 4}   & \textit{Drop 5}   \\ \midrule
         Experiment         & 1        & 2        & 3        & 4        & 5        \\
-        Tijdstip           & 1.003758 & 1.015506 & 1.013395 & 1.012443 & 1.012150 \\
-        Frames per seconde & 33       & 34       & 32       & 34       & 34      
+        Tijdstip in seconden          & 1.003758 & 1.015506 & 1.013395 & 1.012443 & 1.012150 \\
+        Frames per seconde & 33       & 34       & 32       & 34       & 34      \\ \bottomrule
     \end{tabular}
-    \caption{Oorsprong FPS drops experiment Vuforia}\label{tbl:vuforiadrop}
+    \caption{Vuforia: grote FPS drops komen eenmalig in het begin voor bij elk experiment}\label{tbl:vuforiadrop}
 \end{table}
 
 Op figuur \ref{fig:vuforiaTimeDrop} is te zien dat de framerate voor het verdere verloop van de applicatie stabiel blijft met hier en daar een kleine FPS (minder dan 10 frames) drop.
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{vuforiaTimeDrop.png}
-    \caption{Vuforia: verloop van de FPS bij alle experimenten}
+    \includegraphics[width=\linewidth]{vuforiaAllExp.png}
+    \caption{Vuforia: verloop van de FPS bij alle experimenten (1 tot 5, van links naar rechts en boven naar onder)}
     \label{fig:vuforiaTimeDrop}
 \end{figure}
 
 \subsection{Analyse FPS Drops: ARCore}
 Hoewel ARCore minder drops heeft dan Vuforia zijn ze wel veel groter (zie tabel \ref{tbl:arcoredrop}) in secties \ref{sec:memory} en \ref{sec:gameobjects} worden de oorzaken van deze drops verder besproken. Op figuur \ref{fig:arcoreTimeDrop} is te zien dat net zoals bij Vuforia de FPS bij alle experimenten redelijk consistent blijft doorheen de applicatie. Het grote verschil met Vuforia is dat de kleinere drops hoofdzakelijk geconcentreerd zijn in het begin (eerste 50 seconden) in plaats van verspreid te doorheen de looptijd van de applicatie. 
 
-\begin{table}[]
-    \begin{tabular}{@{}l|l|l|l@{}}
-        & Drop 1    & Drop 2   & Drop 3    \\ \midrule
+\begin{table}
+    \centering
+    \begin{tabular}{llll} \toprule
+        & \textit{Drop 1}    & \textit{Drop 2}   & \textit{Drop 3}    \\ \midrule
         Experiment         & 2         & 4        & 4         \\
-        Tijdstip           & 218.63180 & 85.33646 & 250.73920 \\
-        Frames per seconde & 8         & 7        & 10       
+        Tijdstip in seconden          & 218.63180 & 85.33646 & 250.73920 \\
+        Frames per seconde & 8         & 7        & 10       \\ \bottomrule
     \end{tabular}
-    \caption{Oorsprong FPS drops experiment ARCore}\label{tbl:arcoredrop}
+    \caption{ARCore: grote FPS drops komen inconsistent voor bij de verschillende experimenten }\label{tbl:arcoredrop}
 \end{table}
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{arcoreTimeDrop.png}
-    \caption{ARCore: verloop van de FPS bij alle experimenten}
+    \includegraphics[width=\linewidth]{arcoreAllExp.png}
+    \caption{ARCore: verloop van de FPS bij alle experimenten (1 tot 5, van links naar rechts en boven naar onder)}
     \label{fig:arcoreTimeDrop}
 \end{figure}
 
@@ -87,38 +89,41 @@ Het RAM-verbruik van Vuforia fluctueert ook veel meer dan ARCore, een standaarda
 
 Wanneer het gereserveerde RAM stijgt is het ook logisch dat gealloceerde RAM stijgt. Een applicatie gaat niet meer RAM reserveren tenzij deze meer RAM nodig heeft. Dit is bewezen door het correlatiecoëfficiënt van gereserveerd tegenover gealloceerd RAM en het correlatiecoëfficiënt van de stijging in gereserveerd RAM tegenover de stijging in gealloceerd RAM te berekenen. In tabel \ref{tbl:ramcor} is te zien dat bij beide frameworks hier een volstrekt verband is.
 
-\begin{table}[]
-    \begin{tabular}{@{}l|l|l@{}}
-        & Gereserveerd tegenover gealloceerd & Stijging gereserveerd tegenover stijging gealloceerd \\ \midrule
-        Vuforia & 0.9987308                          & 0.9496204                                            \\
-        ARCore  & 0.9981332                          & 0.9999941                                           
+\begin{table}
+    \centering
+    \begin{tabular}{lll} \toprule
+       \textit{Frameworks} &  \textit{Gereserveerd vs gealloceerd} &  \textit{Stijging gereserveerd   vs stijging gealloceerd} \\ \midrule
+        Vuforia & 0.9987308                          & 0.9496204                                            \\ 
+        ARCore  & 0.9981332                          & 0.9999941                                           \\ \bottomrule
     \end{tabular}
- \caption{De correlatiecoëfficiënten gereserveerd en gealloceerd RAM tonen een duidelijk verband}
+ \caption{De correlatiecoëfficiënten gereserveerd en gealloceerd RAM (en hun stijgingen) tonen een duidelijk verband}\label{tbl:ramcor}
 \end{table}
 
 \subsection{Correlatie RAM en FPS}
 Zoals er eerder vermeld in sectie \ref{sec:fps} kampen beide frameworks met FPS drops. Om deze FPS drops te verklaren is er onderzoek gedaan of er een verband is tussen stijgingen in RAM-verbruik en FPS.
 
 Uit de tabellen \ref{tbl:ramfps} en \ref{tbl:ramdropfps} is het duidelijk dat er bij Vuforia een verband aanwezig is tussen stijgingen in gereserveerd en gealloceerd RAM en FPS drops. Tussen deze stijgingen en FPS is er een negatief verband aanwezig wat erop wijst dat de FPS zal dalen wanneer er een stijging zal plaatsenvinden. Dit wordt ook nog eens bevestigd in \ref{tbl:ramdropfps} waarbij er een positief verband aanwezig is wat wijst op een stijging in het aantal gedropte frames wanneer het RAM stijgt. Bij ARCore is er alleen bij de FPS drops een verband aanwezig. Dit is te verklaren door de grote FPS drops die Vuforia ervaart bij het opstarten van de applicatie.
-\begin{table}[]
-    \begin{tabular}{l|ll|l|l}
-        & Reserveerd & Stijging reserveerd & Alloceerd  & Stijging alloceerd \\ \hline
-        Vuforia & 0.01598619 & -0.9604763          & 0.01714372 & -0.9107168         \\
-        ARCore  & 0.04140291 & -0.2194807          & 0.04099924 & -0.2321268        
+\begin{table}
+    \centering
+    \begin{tabular}{lllll}\toprule
+       \textit{Frameworks} & \textit{Reserveerd} & \textit{Stijging reserveerd} & \textit{Alloceerd}  & \textit{Stijging alloceerd} \\ \midrule
+        Vuforia & 0.01598619 & -0.9604763          & 0.01714372 & -0.9107168         \\ 
+        ARCore  & 0.04140291 & -0.2194807          & 0.04099924 & -0.2321268        \\ \bottomrule
     \end{tabular}
-\caption{Correlatie tussen RAM en FPS}\label{tbl:ramfps}
+\caption{Correlatie tussen RAM en FPS, een stijging van gereserveerd of gealloceerd RAM doet de FPS dalen bij Vuforia, ARCore heeft hierbij een zwakker negatief verband. Het totaal aantal RAM heeft geen verband met de FPS}\label{tbl:ramfps}
 \end{table}
 
-\begin{table}[]
-    \begin{tabular}{l|ll|l|l}
-        & Reserveerd   & Stijging reserveerd & Alloceerd   & Stijging alloceerd \\ \hline
+\begin{table}
+    \centering
+    \begin{tabular}{lllll}\toprule
+        \textit{Frameworks} & \textit{Reserveerd}   & \textit{Stijging reserveerd} & \textit{Alloceerd}   & \textit{Stijging alloceerd} \\ \midrule
         Vuforia & -0.005773322 & 0.7445151           & -0.00729054 & 0.6988763          \\
-        ARCore  & -0.1287283   & 0.7155269           & -0.1315688  & 0.7157725         
+        ARCore  & -0.1287283   & 0.7155269           & -0.1315688  & 0.7157725   \\    \bottomrule 
     \end{tabular}
-\caption{Correlatie tussen RAM en FPS drops}\label{tbl:ramdropfps}
+\caption{Correlatie tussen RAM en FPS drops, een stijging van gereserveerd of gealloceerd RAM vermeerdert de FPS drop bij Vuforia en ARCore, totaal aantal RAM heeft geen verband met de grootte}\label{tbl:ramdropfps}
 \end{table}
 
-\section{GameObjects}
+\section{GameObjects}\label{sec:gameobjects}
 Ook het aantal gameobjects kon invloed hebben op FPS drops. Het interessante verschil tussen Vuforia en ARCore is de standaard methode waarop ze de virtuele objecten onthouden. Omdat bij Vuforia het object een kind is van het image target is deze sowieso aanwezig zelfs wanneer de afbeelding nog niet herkent is. Het aantal objecten is bij Vuforia constant, dit is makkelijk na te gaan door de standaardafwijking te berekenen die nul uitkomt wat wijst op geen afwijkingen. Om te objecten niet constant in te wereld te moeten tonen ze Vuforia hun renderer uit wanneer ze niet meer zichtbaar zijn. Het aantal zichtbare objecten (deze waarvan de renderer aanstaat) heeft helemaal geen (-0.006362351) invloed op het RAM.
 
 ARCore werkt op een volledige andere manier voor het bijhouden van de objecten. In de code van het standaard script staat er dat wanneer een nieuwe afbeelding wordt herkent er hiervoor een nieuw gameobject nodig is. Bij het verliezen van de tracking vernietigt het script dit object. Met deze manier van werken is het aantal actieve objecten dus niet constant. Op de grafiek van figuur \ref{fig:arcoreObjectCount} is er te zien dat de oude objecten niet verdwijnen uit het geheugen. Door het variabel aantal objecten is het mogelijk om de correlatie tussen aantal objecten en RAM-verbruik na te gaan. Er is inderdaad een positief (0.6887693) verband aanwezig. Om na te gaan of dit correct is, is het verband tussen de stijgingen in aantal objecten en stijgingen in RAM gecontroleerd wat ook een positief verband aantoont (0.6253159). 
