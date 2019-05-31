@@ -5,7 +5,7 @@
 \chapter{Methodologie van het Experiment}
 \label{ch:methodologie}
 
-Om de kwaliteit van een augmented reality framework te beoordelen is het experiment in twee delen opgedeeld. Het eerste deel van het experiment gaat over hoe goed de frameworks de core van de applicatie kunnen implementeren. Elk framework krijgt dezelfde lijst met vijftien verschillende afbeeldingen (te vinden op de \href{https://github.com/MatthiasDeFre/bachelorproef-hogent-2019}{repository van deze studie} \autocite{GITHUBMDF}). De bedoeling is dat elk framework zoveel mogelijk images probeert te herkennen. De gebruikte lijst met images kan u vinden in de bijlage. De lijst is opgebouwd uit afbeeldingen met een verschillende moeilijkheidsgraad. Om te weten wat een moeilijke of makkelijke afbeelding is gebruikt deze studie volgende criteria.
+Om de kwaliteit van een augmented reality framework te beoordelen is het experiment in twee delen opgedeeld. Het eerste deel van het experiment gaat over hoe goed de frameworks de core van de applicatie kunnen implementeren. Elk framework krijgt dezelfde lijst met vijftien verschillende afbeeldingen (te vinden op de \href{https://github.com/MatthiasDeFre/bachelorproef-hogent-2019}{repository van deze studie} \autocite{GITHUBMDF}). De bedoeling is dat elk framework zoveel mogelijk images probeert te herkennen. De lijst is opgebouwd uit afbeeldingen met een verschillende moeilijkheidsgraad. Om te weten wat een moeilijke of makkelijke afbeelding is gebruikt deze studie volgende criteria.
 
 \begin{itemize}
     \item Veel features
@@ -43,7 +43,7 @@ De standaard manier om een virtueel object te tonen is aan de hand van een gameo
 Een gameobject moet niet altijd een fysieke vorm hebben, een leeg gameobject kan ook bestaan. Dit object kan dan nog steeds gebruikmaken van de lifecycle methoden. De profiler is hier een voorbeeld van.
 
 \subsection{Prefab}
-Sommige gameobjects komen vaak voor in een applicatie. Een developer kan deze gameobjects opslaan door ze te slepen vanuit het editor venster naar de assets folder. Hierdoor verandert het object in een prefab en is het herbruikbaar in verschillende scene's en scripts. Het grootste voordeel hiervan is dat aanpassingen aan de prefab ook de gameobjects in de scene's en scripts aanpassen.
+Sommige gameobjects komen vaak voor in een applicatie. Een developer kan deze gameobjects opslaan door ze te slepen vanuit het editor venster naar de assets folder. Hierdoor verandert het object in een prefab en is het herbruikbaar in verschillende scene's en scripts. Het grootste voordeel hieraan is dat aanpassingen aan de prefab ook de gameobjects in de scene's en scripts aanpassen.
 
 \subsection{Canvas}
 Het canvas bevat alle UI elementen zoals text, images en buttons.
@@ -120,7 +120,11 @@ Indien u het experiment exact wilt repliceren moet u beschikken over de volgende
     \item OxygenOS Versie: 9.0.13
 \end{enumerate}
 
-De gebruikte ruimte kan u zien op figuur \ref{fig:testSetup}. Alle experimenten zijn achterelkaar uitgevoerd waarbij eerst de vijf Vuforia experimenten en erna de vijf ARCore experimenten.
+De gebruikte ruimte kan u zien op figuur \ref{fig:testSetup}. Alle experimenten zijn achterelkaar uitgevoerd waarbij eerst de vijf Vuforia experimenten en erna de vijf ARCore experimenten. De gebruikte Unity applicaties zijn te vinden op:
+\begin{enumerate}
+    \item \href{https://github.com/MatthiasDeFre/ARCore-Experiment}{Repository ARCore experiment} \autocite{GITHUBARCORE}.
+      \item \href{https://github.com/MatthiasDeFre/Vuforia-Experiment}{Repository Vuforia experiment} \autocite{GITHUBVUFORIA}.
+\end{enumerate}
 \begin{figure}
     \includegraphics[width=\linewidth]{testSetup.jpg}
     \caption{De ruimte waarin het experiment is uitgevoerd}

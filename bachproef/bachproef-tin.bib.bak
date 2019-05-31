@@ -420,7 +420,7 @@
   author = {Zeller, Mat and Bray, Brandon and McCulloch, Jesse and Turner, Alex, title = {Gestures}},
   title  = {{Gestures}},
   year   = {2018},
-  url    = {https://docs.microsoft.com/en-us/windows/mixed-reality/spatial-mapping},
+  url    = {https://docs.microsoft.com/en-us/windows/mixed-reality/gestures},
 }
 
 @Misc{ARKitImages,
@@ -529,6 +529,27 @@
   title  = {{VuMark}},
   year   = {2019},
   url    = {https://library.vuforia.com/articles/Training/VuMark},
+}
+
+@Misc{GITHUBVUFORIA,
+  author = {De Fré, Matthias},
+  title  = {{Vuforia Experiment Repository}},
+  year   = {2019},
+  url    = {https://github.com/MatthiasDeFre/Vuforia-Experiment},
+}
+
+@Misc{GITHUBARCORE,
+  author = {De Fré, Matthias},
+  title  = {{ARCore Experiment Repository}},
+  year   = {2019},
+  url    = {https://github.com/MatthiasDeFre/ARCore-Experiment},
+}
+
+@Misc{GITHUBPROTOTY,
+  author = {De Fré, Matthias},
+  title  = {{Prototype Repository}},
+  year   = {2019},
+  url    = {https://github.com/MatthiasDeFre/Bachelorproef-Prototype},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

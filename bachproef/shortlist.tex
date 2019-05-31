@@ -11,7 +11,7 @@ Volgende extra features zijn opgesteld eens de meest passende technologie bekend
 De applicatie beschikt over de mogelijkheid om kunstwerken in te scannen en hierop digitale objecten te tonen. 
 Om er voor te zorgen dat gebruikers niet te veel gebonden zijn aan de chronologie van het levensverhaal kunnen ze er ook voor kiezen om zonder rondleiding rond te lopen in het museum en op deze manier de kunstwerken te scannen.
 
-Musea kunnen ook kiezen om een raadsel te verbinden aan een kunstwerk. Hierdoor kan de gebruik het kunstwerk alleen maar scannen indien hij het raadsel heeft opgelost. Op deze manier is er nog een extra vorm van interacties. Volgende lijst zijn voorbeelden van mogelijke raadsels: 
+Musea kunnen ook kiezen om een raadsel te verbinden aan een kunstwerk. Hierdoor kan de gebruiker het kunstwerk alleen maar scannen indien hij het raadsel heeft opgelost. Op deze manier is er nog een extra vorm van interactie. Volgende lijst bevat voorbeelden van mogelijke raadsels: 
 
 \begin{enumerate}
     \item Zoek een voorwerp in een kunstwerk
@@ -66,13 +66,13 @@ Deze vereisten zijn volledig optioneel en zullen niet zoveel invloed hebben op d
 \end{itemize} 
 
 \section{8th Wall}
-Alhoewel het bedrijf achter 8th Wall zich de laatste tijd meer en meer hebben gefocust op 8th Wall Web heeft dit framework ook nog een tweede luik met 8th Wall XR. Het verschil tussen deze twee subframeworks is dat Web, zoals de naam het al duidelijk maakt, in een webbrowser draait. Echter zijn wel niet alle browsers ondersteund \autocite{8thWallWebReq}:
+Alhoewel het bedrijf achter 8th Wall zich de laatste tijd meer en meer heeft gefocust op 8th Wall Web heeft dit framework ook nog een tweede luik met 8th Wall XR. Het verschil tussen deze twee subframeworks is dat Web, zoals de naam het al duidelijk maakt, in een webbrowser draait. Echter zijn wel niet alle browsers ondersteund \autocite{8thWallWebReq}:
 \begin{itemize}
     \item iOS
     \begin{itemize}
         \item Safari
     \end{itemize}
-    \item Ondersteuning van browser
+    \item Android
     \begin{itemize}
         \item Chrome
         \item Chrome varianten (Chromium browsers)
@@ -244,7 +244,7 @@ Net zoals 8th Wall en ARCore biedt Vuforia de mogelijkheid om native applicaties
 Ontwikkeling van Vuforia applicaties kan gebeuren in de native development omgevingen van Android, iOS en UWP door gebruik te maken van passende SDK. Ook is er de mogelijkheid om applicaties te ontwikkelen in Unity, deze kunnen dan draaien op alle bovenstaande native technologieën.
 
 \subsection{Fusion}
-Het unieke aan Vuforia is de manier waarop deze \acrshort{slam} implementeert. Vuforia zal zoveel mogelijk proberen gebruik te maken van de native mapping algoritmen (ARKit, ARCore en MR). Hierdoor kan deze gebruikmaken van alle features die deze native technologieën bevatten alsook nog zijn eigen functionaliteiten hieraan toevoegen. Op deze manier ondersteunt Vuforia direct alle apparaten die gebruikmaken van ARKit, ARCore en MR. Voor apparaten die niet ondersteunt zijn door deze frameworks is er VISLAM en \acrshort{slam}. Hierdoor is er ook ondersteuning voor oudere apparaten die ARKit of ARCore niet ondersteunen \autocite{VuforiaFusion}.
+Het unieke aan Vuforia is de manier waarop deze \acrshort{slam} implementeert. Vuforia zal zoveel mogelijk proberen gebruik te maken van de native mapping algoritmen (ARKit, ARCore en MR). Hierdoor kan deze gebruikmaken van alle features die deze native technologieën bevatten alsook nog zijn eigen functionaliteiten hieraan toevoegen. Op deze manier ondersteunt Vuforia direct alle apparaten die gebruikmaken van ARKit, ARCore en MR. Voor apparaten die niet ondersteunt zijn door deze frameworks is er VISLAM en \acrshort{slam} (zie figuur \ref{fig:vuforiaFusion}). Hierdoor is er ook ondersteuning voor oudere apparaten die ARKit of ARCore niet ondersteunen \autocite{VuforiaFusion}.
 \begin{figure}
     \includegraphics[width=\linewidth]{vuforiaFusion.png}
     \caption{Vuforia Fusion \autocite{VuforiaFusion}}
@@ -274,7 +274,7 @@ Vuforia bied vijf soorten herkenning aan, deze worden hieronder kort uitgelegd w
 \end{figure}
 
 \subsection{Requirements}
-Vuforia heeft een score 37/41 (zie tabel \ref{tbl:vuforiareq}) door zijn grote focus op de benodige requirements alsook de nice-to-haves. Door zijn multiplatform (Android en ioS) support in combinatie met eigen features krijgt deze een hoge score. Echter bij het testen van dit framework is het wel gebleken dat er zich hevige drifting voordoet wanneer de plane detection functie wordt gebruikt. Dit voorval heeft een kleine negatieve invloed op de score van Vuforia.
+Vuforia heeft een score 37/41 (zie tabel \ref{tbl:vuforiareq}) door zijn grote focus op de benodige requirements alsook de nice-to-haves. Door zijn multiplatform (Android en iOS) support in combinatie met eigen features krijgt deze een hoge score. Echter bij het testen van dit framework is het wel gebleken dat er zich hevige drifting voordoet wanneer de plane detection functie wordt gebruikt. Dit voorval heeft een kleine negatieve invloed op de score van Vuforia.
 \begin{table}[]
     \centering
     \begin{tabular}{@{}lll@{}}
@@ -308,7 +308,7 @@ Vuforia heeft een score 37/41 (zie tabel \ref{tbl:vuforiareq}) door zijn grote f
 \end{table}
 
 \section{Conclusie Shortlist}
-Uit deze shortlist blijkt dat ARCore en Vuforia de twee hoogste scorende frameworks zijn (zie table \ref{tbl:arscore}). Dit betekent echter niet dat deze de beste frameworks zijn, maar eerder dat deze minstens over alle nodige basisfunctionaliteiten van de applicatie beschikken. Deze twee frameworks worden nu verder met elkaar vergeleken in het experiment waarbij zal worden getest hoe goed zijn deze functionaliteiten implementeren alsook hoe goed hun performance is.
+Uit deze shortlist blijkt dat ARCore en Vuforia de twee hoogste scorende frameworks zijn (zie tabel \ref{tbl:arscore}). Dit betekent echter niet dat deze de beste frameworks zijn, maar eerder dat deze minstens over alle nodige basisfunctionaliteiten van de applicatie beschikken. Deze twee frameworks worden nu verder met elkaar vergeleken in het experiment waarbij zal worden getest hoe goed zijn deze functionaliteiten implementeren alsook hoe goed hun performance is.
 \begin{table}[]
     \centering
     \begin{tabular}{@{}lllll@{}}

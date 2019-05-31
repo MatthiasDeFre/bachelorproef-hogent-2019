@@ -4,7 +4,7 @@
 In dit hoofdstuk worden de resultaten besproken van het experiment tussen Vuforia en ARCore. De eerste sectie van dit hoofdstuk gaat over hoe goed beide frameworks de vijftien afbeeldingen hebben herkent. De achtereenvolgende hoofdstukken hebben te maken met de analyse van de data uit het experiment. Tot slot is er een conclusie waarin één van de frameworks bekroond is als winnaar.
 
 \section{Afbeeldingsherkenning}
-Bij de vijf initiële experimenten heeft ARCore alle afbeeldingen herkent terwijl Vuforia één afbeelding niet kon herkennen namelijk George3 (te vinden op de \href{https://github.com/MatthiasDeFre/bachelorproef-hogent-2019}{Github repository van deze studie \autocite{GITHUBMDF}}). Vuforia herkende de afbeelding niet door de lage verlichting die aanwezig was. Wanneer de verlichting op de afbeelding verhoogde herkende Vuforia de afbeelding direct (zie figuur \ref{fig:vuforiaDarkImage}.
+Bij de vijf initiële experimenten heeft ARCore alle afbeeldingen herkent terwijl Vuforia één afbeelding niet kon herkennen namelijk George3 (te vinden op de \href{https://github.com/MatthiasDeFre/bachelorproef-hogent-2019}{Github repository van deze studie \autocite{GITHUBMDF}}). Vuforia herkende de afbeelding niet door de lage verlichting die aanwezig was. Wanneer de verlichting op de afbeelding verhoogde herkende Vuforia de afbeelding direct (zie figuur \ref{fig:vuforiaDarkImage}).
 
 \begin{figure}
     \includegraphics[width=\linewidth]{vuforiaDarkImage.png}
@@ -35,8 +35,8 @@ Een standaardafwijking groter dan nul wijst erop dat data niet constant is. Bij 
 De grote van de FPS drops hebben een grotere impact op de ervaring dan de frequentie van de drops. Kleine drops van één tot twee frames hebben geen impact op de ervaring voor gebruiker omdat ze niet zichtbaar zijn. Daarom analyseert deze studie alleen maar de FPS drops die groter zijn dan tien frames.
 
 \begin{itemize}
-    \item Vuforia: 5
-    \item ARCore: 3
+    \item Aantal grote drops Vuforia: 5
+    \item Aantal grote drops ARCore: 3
 \end{itemize}
 
 \subsection{Analyse FPS Drops: Vuforia}
@@ -124,7 +124,7 @@ Uit de tabellen \ref{tbl:ramfps} en \ref{tbl:ramdropfps} is het duidelijk dat er
 \end{table}
 
 \section{GameObjects}\label{sec:gameobjects}
-Ook het aantal gameobjects kon invloed hebben op FPS drops. Het interessante verschil tussen Vuforia en ARCore is de standaard methode waarop ze de virtuele objecten onthouden. Omdat bij Vuforia het object een kind is van het image target is deze sowieso aanwezig zelfs wanneer de afbeelding nog niet herkent is. Het aantal objecten is bij Vuforia constant, dit is makkelijk na te gaan door de standaardafwijking te berekenen die nul uitkomt wat wijst op geen afwijkingen. Om te objecten niet constant in te wereld te moeten tonen ze Vuforia hun renderer uit wanneer ze niet meer zichtbaar zijn. Het aantal zichtbare objecten (deze waarvan de renderer aanstaat) heeft helemaal geen (-0.006362351) invloed op het RAM.
+Ook het aantal gameobjects kon invloed hebben op FPS drops. Het interessante verschil tussen Vuforia en ARCore is de standaard methode waarop ze de virtuele objecten onthouden. Omdat bij Vuforia het object een kind is van het image target is deze sowieso aanwezig zelfs wanneer de afbeelding nog niet herkent is. Het aantal objecten is bij Vuforia constant, dit is makkelijk na te gaan door de standaardafwijking te berekenen die nul uitkomt wat wijst op geen afwijkingen. Om de objecten niet constant in te wereld te moeten tonen zet Vuforia hun renderer uit wanneer ze niet meer zichtbaar zijn. Het aantal zichtbare objecten (deze waarvan de renderer aanstaat) heeft helemaal geen (-0.006362351) invloed op het RAM.
 
 ARCore werkt op een volledige andere manier voor het bijhouden van de objecten. In de code van het standaard script staat er dat wanneer een nieuwe afbeelding wordt herkent er hiervoor een nieuw gameobject nodig is. Bij het verliezen van de tracking vernietigt het script dit object. Met deze manier van werken is het aantal actieve objecten dus niet constant. Op de grafiek van figuur \ref{fig:arcoreObjectCount} is er te zien dat de oude objecten niet verdwijnen uit het geheugen. Door het variabel aantal objecten is het mogelijk om de correlatie tussen aantal objecten en RAM-verbruik na te gaan. Er is inderdaad een positief (0.6887693) verband aanwezig. Om na te gaan of dit correct is, is het verband tussen de stijgingen in aantal objecten en stijgingen in RAM gecontroleerd wat ook een positief verband aantoont (0.6253159). 
 
